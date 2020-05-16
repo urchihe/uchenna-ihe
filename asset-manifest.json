@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/uchenna-ihe/static/css/main.a6c14227.chunk.css",
+    "main.js": "/uchenna-ihe/static/js/main.aa0b1beb.chunk.js",
+    "main.js.map": "/uchenna-ihe/static/js/main.aa0b1beb.chunk.js.map",
+    "runtime-main.js": "/uchenna-ihe/static/js/runtime-main.3b3b6f23.js",
+    "runtime-main.js.map": "/uchenna-ihe/static/js/runtime-main.3b3b6f23.js.map",
+    "static/js/2.31ee3788.chunk.js": "/uchenna-ihe/static/js/2.31ee3788.chunk.js",
+    "static/js/2.31ee3788.chunk.js.map": "/uchenna-ihe/static/js/2.31ee3788.chunk.js.map",
+    "index.html": "/uchenna-ihe/index.html",
+    "precache-manifest.ad342413c3d77a990c22105ff2b650e6.js": "/uchenna-ihe/precache-manifest.ad342413c3d77a990c22105ff2b650e6.js",
+    "service-worker.js": "/uchenna-ihe/service-worker.js",
+    "static/css/main.a6c14227.chunk.css.map": "/uchenna-ihe/static/css/main.a6c14227.chunk.css.map",
+    "static/js/2.31ee3788.chunk.js.LICENSE.txt": "/uchenna-ihe/static/js/2.31ee3788.chunk.js.LICENSE.txt",
+    "static/media/Python.png": "/uchenna-ihe/static/media/Python.010e6b03.png",
+    "static/media/database.svg": "/uchenna-ihe/static/media/database.158dabdc.svg",
+    "static/media/node.png": "/uchenna-ihe/static/media/node.9ebf3baf.png",
+    "static/media/php.png": "/uchenna-ihe/static/media/php.39dff610.png",
+    "static/media/pic.png": "/uchenna-ihe/static/media/pic.f7aecbdf.png",
+    "static/media/react.svg": "/uchenna-ihe/static/media/react.5d5d9eef.svg",
+    "static/media/ux-iu.png": "/uchenna-ihe/static/media/ux-iu.a26fd6b2.png",
+    "static/media/vue.svg": "/uchenna-ihe/static/media/vue.d443c086.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3b3b6f23.js",
+    "static/js/2.31ee3788.chunk.js",
+    "static/css/main.a6c14227.chunk.css",
+    "static/js/main.aa0b1beb.chunk.js"
+  ]
+}
