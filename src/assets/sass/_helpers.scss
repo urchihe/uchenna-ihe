@@ -1,0 +1,130 @@
+@import 'variables';
+
+/**
+Margin and padding helpers
+ */
+ $spaceamounts: (
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    75,
+    100
+  ); // Adjust this to include the pixel amounts you need.
+  $sides: (top, bottom, left, right); // Leave this variable alone
+  
+  @each $space in $spaceamounts {
+    @each $side in $sides {
+      .m#{str-slice($side, 0, 1)}-#{$space} {
+        margin-#{$side}: #{$space}px !important;
+      }
+  
+      .m-#{$space} {
+        margin: #{$space}px !important;
+      }
+  
+      .p#{str-slice($side, 0, 1)}-#{$space} {
+        padding-#{$side}: #{$space}px !important;
+      }
+  
+      .p-#{$space} {
+        padding: #{$space}px !important;
+      }
+    }
+  }
+  
+  .text-right {
+    text-align: right;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .horizontal-align {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .vertical-align {
+    display: flex;
+    align-items: center;
+  }
+  
+  .vertical-align-column {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+  }
+  
+  .all-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .all-align-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  
+// breakpoints map
+$breakpoints: (
+  xs: 32rem,
+  sm: 48rem,
+  md: 72rem,
+  lg: 96rem,
+  xl: 102rem,
+  xx: 120rem
+);
+
+// media query mixin
+@mixin break($size) {  
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+// number of columns variable
+$items: 12;
+
+// grid container
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 1rem;
+}
+
+// grid item
+.grid__item {
+  padding: 0.8rem;
+  
+  &:nth-child(even) {
+    background-color: $color-background-even;
+  }
+  
+  &:nth-child(odd) {
+    background-color: $color-background-odd;
+  }
+}
+
+// loop over the breakpoints
+@each $key, $value in $breakpoints {
+  @for $i from 1 through $items {
+    .grid__item--#{$key}-span-#{$i} {
+      flex: 0 0 100%;
+      @include break($key) {
+        flex: 0 0 #{$i / $items * 100%};
+      }
+    }
+  }
+}
+;

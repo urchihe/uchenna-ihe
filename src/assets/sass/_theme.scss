@@ -1,0 +1,331 @@
+@import 'variables';
+
+body {
+    box-sizing: border-box;
+    background-color: $nav-background;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+// Outer navigation wrapper
+.navigation {
+  height: $nav-height;
+  background: $nav-background;
+  z-index: 1000;
+}
+
+// Logo and branding
+.brand {
+  position: absolute;
+  padding-left: 1px;
+  float: left;
+  line-height: $nav-height;
+  text-transform: uppercase;
+  font-size: 1.4em;
+  a,
+  a:visited{
+    color: $nav-font-color;
+    text-decoration: none;
+  }
+  &:hover {
+    background: $link-hover-color;
+    color: $nav-font-color;
+    cursor: pointer;
+  }
+}
+// Container with no padding for navbar
+.nav-container {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 0;
+}
+
+// Navigation 
+nav {
+  float: right;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      float: left;
+      position: relative;
+      a,
+      a:visited {
+        display: block;
+        padding: 0 20px;
+        line-height: $nav-height;
+        background: $nav-background;
+        color: $nav-font-color;
+        text-decoration: none;
+        &:hover {
+          background: $link-hover-color;
+          color: $nav-font-color;
+          cursor: pointer;
+        }
+        &:not(:only-child):after {
+          padding-left: 4px;
+          content: " \25be";
+        }
+      }
+       // Dropdown list
+      ul li {
+        min-width: 190px;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}
+// Dropdown list binds to JS toggle event
+.nav-dropdown {
+  position: absolute;
+  display: none;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile navigation */
+
+// Binds to JS Toggle
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $nav-background;
+  height: $nav-height;
+  width: $nav-height;
+}
+@media only screen and (max-width: $breakpoint) {
+  // Hamburger nav visible on mobile only
+  .nav-mobile {
+    display: block;
+    z-index: auto;
+    font-size: 1.0em;
+  }
+  nav {
+   width: 100%;
+    padding: $nav-height 0 0;
+    ul {
+      display: none;
+      li {
+        float: none;
+        a {
+          padding: 15px;
+          line-height: 20px;
+        }
+        ul li a {
+          padding-left: 30px;
+        }
+      }
+    }
+  }
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: $breakpoint) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+  background-color: $nav-background;
+  span,
+  span:before,
+  span:after {
+    cursor: pointer;
+    border-radius: 1px;
+    height: 5px;
+    width: 35px;
+    background: $nav-font-color;
+    position: absolute;
+    display: block;
+    content: '';
+    transition: all 300ms ease-in-out;
+  }
+  span:before {
+    top: -10px;
+  }
+  span:after {
+    bottom: -10px;
+  }
+  &.active span {
+    background-color: $nav-background;
+    &:before,
+    &:after {
+      top: 0;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// Page content 
+article {
+  max-width: $content-width;
+  margin: 0 auto;
+  padding: 10px;
+}
+img.image-logo {
+  width: 100%;
+  height: 1600px;
+  padding: 0;
+  overflow:none;
+}
+.image-content {
+  margin: 15 auto;
+  text-align: left;
+  color: $nav-font-color;
+  position: absolute;
+  top: 60px;
+  right: 20%;
+  display: block;
+  letter-spacing: 3px;
+  padding-left: 30px;
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+}
+.about-me {
+  margin: 15 auto;
+  text-align: center;
+  color: $nav-font-color;
+  font-size: 17px;
+  font-weight: 10px;
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.no-padding {
+  padding: 0;
+}
+.fix-picture {
+  position: static;
+}
+.meter { 
+  height: 7px;
+  position: relative;
+  background: #f3efe6;
+  overflow: hidden;
+  margin-bottom: 15px;
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+}
+
+.progress {
+  background-color: $link-hover-color;
+  -webkit-animation: progressBar 3s ease-in-out;
+  -webkit-animation-fill-mode:both; 
+  -moz-animation: progressBar 3s ease-in-out;
+  -moz-animation-fill-mode:both; 
+}
+
+@-webkit-keyframes progressBar {
+0% { width: 0; }
+100% { width: 100%; }
+}
+
+@-moz-keyframes progressBar {
+0% { width: 0; }
+100% { width: 100%; }
+}
+.skills {
+  color: $link-hover-color;
+  text-transform: uppercase;
+}
+.level {
+  color: $link-hover-color;
+  float: right;
+}
+.head-font {
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: $link-hover-color;
+  color: white;
+}
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.02);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: $link-hover-color;
+  text-decoration: underline;
+  text-decoration-color: $link-hover-color;
+}
+
+.flip-card-back {
+  background-color: $link-hover-color;
+  color: white;
+  transform: rotateY(180deg);
+}
+.active {
+  background-color: #bbb ;
+}
