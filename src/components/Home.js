@@ -12,6 +12,7 @@ import nodeLogo from '../assets/images/node.png'
 import uiLogo from '../assets/images/ux-iu.png'
 import databaseLogo from '../assets/images/database.svg'
 import { PropTypes } from 'prop-types'
+import { Link } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,9 +42,19 @@ const Home = ({contacts}) => {
             </Grid>
             <Grid item xs={12} className="image-content">
                 <Container maxWidth="xs">
-                    <h3> Hello! My name is Uchenna Ihe <br/> 
-                    I am a full-stack Software Developer, I work remotely as a full-time freelancer.Do you have a project?&nbsp;&nbsp;   
-                    <a href="/#contact">CONTACT ME!</a></h3>
+                        <Link
+                            activeClass="active-link"
+                            to="contact"
+                            spy={true}
+                            hashSpy={true}
+                            smooth={true}
+                            offset={-70}
+                            duration={200}
+                        >
+                          <h3> Hello! My name is Uchenna Ihe <br/> 
+                            I am a full-stack Software Developer, I work remotely as a full-time freelancer.Do you have a project?&nbsp;&nbsp; CONTACT ME!
+                          </h3>
+                        </Link> 
                 </Container>
             </Grid>
             <Grid item xs={12} id="aboutMe">
