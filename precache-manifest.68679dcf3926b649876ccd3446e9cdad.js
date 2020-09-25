@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6190bf90979a70aee499963deb5e1404",
+    "revision": "893d7e807b7ffe7c30dead74203760b7",
     "url": "/uchenna-ihe/index.html"
   },
   {
-    "revision": "184aaf4b4c461bf3b3af",
-    "url": "/uchenna-ihe/static/css/main.a6c14227.chunk.css"
+    "revision": "3eef8c164d5e8766e171",
+    "url": "/uchenna-ihe/static/css/main.f105c6c7.chunk.css"
   },
   {
-    "revision": "d5baa8aa1276fcdc0ac2",
-    "url": "/uchenna-ihe/static/js/2.5ccaa35b.chunk.js"
+    "revision": "038c8c6adc71ca763167",
+    "url": "/uchenna-ihe/static/js/2.b7ae52bf.chunk.js"
   },
   {
     "revision": "ca962714ee3537eb863ad2954c33c63e",
-    "url": "/uchenna-ihe/static/js/2.5ccaa35b.chunk.js.LICENSE.txt"
+    "url": "/uchenna-ihe/static/js/2.b7ae52bf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "184aaf4b4c461bf3b3af",
-    "url": "/uchenna-ihe/static/js/main.d237c2d4.chunk.js"
+    "revision": "3eef8c164d5e8766e171",
+    "url": "/uchenna-ihe/static/js/main.28875da7.chunk.js"
   },
   {
-    "revision": "ce2e23c2a8ada3e976a2",
-    "url": "/uchenna-ihe/static/js/runtime-main.3b3b6f23.js"
+    "revision": "5524ed237c9cbca60dc5",
+    "url": "/uchenna-ihe/static/js/runtime-main.f60d1061.js"
   },
   {
     "revision": "010e6b0331af89c6c802e7428e79a5c9",
@@ -44,15 +44,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/uchenna-ihe/static/media/pic.f7aecbdf.png"
   },
   {
-    "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
-    "url": "/uchenna-ihe/static/media/react.5d5d9eef.svg"
+    "revision": "ee7cd8ed2dcec943251eb2763684fc6f",
+    "url": "/uchenna-ihe/static/media/react.ee7cd8ed.svg"
   },
   {
     "revision": "a26fd6b245f8740732e41c455637a007",
     "url": "/uchenna-ihe/static/media/ux-iu.a26fd6b2.png"
   },
   {
-    "revision": "d443c086950534cd2a77a057c628265e",
-    "url": "/uchenna-ihe/static/media/vue.d443c086.svg"
+    "revision": "9075ee3c6921edb5424e07c5c1ec6328",
+    "url": "/uchenna-ihe/static/media/vue.9075ee3c.svg"
   }
 ]);
