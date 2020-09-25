@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3de413309b9792d90b7f1650e7acf168",
+    "revision": "6190bf90979a70aee499963deb5e1404",
     "url": "/uchenna-ihe/index.html"
   },
   {
-    "revision": "0c5d203777b24056b4ac",
+    "revision": "184aaf4b4c461bf3b3af",
     "url": "/uchenna-ihe/static/css/main.a6c14227.chunk.css"
   },
   {
-    "revision": "4d983c6864972536c573",
-    "url": "/uchenna-ihe/static/js/2.861a2786.chunk.js"
+    "revision": "d5baa8aa1276fcdc0ac2",
+    "url": "/uchenna-ihe/static/js/2.5ccaa35b.chunk.js"
   },
   {
     "revision": "ca962714ee3537eb863ad2954c33c63e",
-    "url": "/uchenna-ihe/static/js/2.861a2786.chunk.js.LICENSE.txt"
+    "url": "/uchenna-ihe/static/js/2.5ccaa35b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0c5d203777b24056b4ac",
-    "url": "/uchenna-ihe/static/js/main.5965085b.chunk.js"
+    "revision": "184aaf4b4c461bf3b3af",
+    "url": "/uchenna-ihe/static/js/main.d237c2d4.chunk.js"
   },
   {
     "revision": "ce2e23c2a8ada3e976a2",
