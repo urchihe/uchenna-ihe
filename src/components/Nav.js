@@ -4,63 +4,64 @@ import $ from 'jquery';
 import { Link, animateScroll as scroll } from "react-scroll";
 
 class Nav extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.props = props
         this._myHeader = '';
         this.scrollSpy = scroll.scrollSpy;
       }
     componentDidMount() {
         window.onscroll = () => {
-             const header = document.getElementById("myHeader");
-             const sticky = header.offsetTop;
-             if (window.pageYOffset >= sticky) {
-                 header.classList.add("sticky");
-                }else
-                {
-                    header.classList.remove("sticky");
-                }
+            const header = document.getElementById("myHeader");
+            const sticky = header.offsetTop;
+            if (window.pageYOffset >= sticky) {
+                header.classList.add("sticky");
+            }
+            else
+            {
+                header.classList.remove("sticky");
+            }
         };
-        $('nav ul li a:not(:only-child)').click(function(e) {
+        $('nav ul li a:not(:only-child)').on('click',function(e) {
             $(this).siblings('.nav-dropdown').toggle();
             // Close one dropdown when selecting another
             $('.nav-dropdown').not($(this).siblings()).hide();
             e.stopPropagation();
         });
         // Clicking away from dropdown will remove the dropdown class
-        $('html').click(function() {
+        $('html').on('click',function() {
             $('.nav-dropdown').hide();
         });
         // Toggle open and close nav styles on click
-        $('#nav-toggle').click(function() {
+        $("#nav-toggle").on('click',function() {
             $('nav ul').slideToggle();
         });
         // Hamburger to X toggle
-        $('#nav-toggle').on('click', function() {
+        $("#nav-toggle").on('click', function() {
             this.classList.toggle('active');
         });
     }
     scrollToTop = () => {
         scroll.scrollToTop();
       }
-
     render(){
          return (
              <section className="navigation" id="myHeader" >
                  <div className="nav-container" id="home">
-                     <div className="brand">
+                     <span className="brand">
                          <Link
-                            activeClass="active-link"
-                            to="/"
-                            spy={true}
-                            hashSpy={true}
-                            smooth={true}
-                            offset={-70}
-                            duration={200}
-                            onClick={this.scrollToTop}
-                        >
-                        Uchenna IHE
+                             activeClass="active"
+                             to="/"
+                             spy={true}
+                             hashSpy={true}
+                             smooth={true}
+                             offset={-80}
+                             duration={200}
+                             onClick={this.scrollToTop}
+                         >
+                              { this.props.appName }
                         </Link>
-                     </div>
+                     </span>
                      <nav>
                          <div className="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
                          <ul className="nav-list">
@@ -71,7 +72,7 @@ class Nav extends Component {
                                      spy={true}
                                      hashSpy={true}
                                      smooth={true}
-                                     offset={-150}
+                                     offset={-300}
                                      duration={200}
                                  >
                                      About me
@@ -112,7 +113,7 @@ class Nav extends Component {
                                              offset={-250}
                                              duration={200}
                                          >
-                                             FrontEnd Development
+                                             Frontend Development
                                        </Link>
                                      </li>
                                      <li>
@@ -125,7 +126,7 @@ class Nav extends Component {
                                              offset={-80}
                                              duration={200}
                                          >
-                                             BackEnd Development
+                                             Backend Development
                                         </Link>
                                      </li>
                                      <li>

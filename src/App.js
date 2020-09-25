@@ -9,12 +9,15 @@ const contacts = {
   email: 'urchihe@gmail.com',
   phone: '+2348130148615'
 }
+const appName = 'UCHENNA IHE'
+const d = new Date();
+const year = d.getFullYear();
 function App() {
   return (
     <div className="App">
-      <Nav/>
+      <Nav appName={appName}/>
       <Home contacts={contacts}/>
-      <Footer/>
+      <Footer year={year}/>
     </div>
   );
 }

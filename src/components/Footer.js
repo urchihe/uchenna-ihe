@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import reactLogo from '../assets/images/react.svg'
+import { PropTypes } from 'prop-types'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -21,21 +22,22 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
-const Footer = () => {
-  const d = new Date();
-  const year = d.getFullYear();
+const Footer = (props) => {
     const classes = useStyles();
     return (
       <div>
         <Grid container spacing={0}>
           <Grid item xs={12} id="contact">
-            <h4 className={classes.paper}>Developed with React:</h4>
-            <h4 className={classes.paper} style={{ paddingTop: '0' }}><span><img src={reactLogo} alt="react logo" style={{ width: '40px', height: '40px' }} /></span></h4>
-            <p className={classes.paper}>@{year} uchenna ihe</p>
+            <h4 className={classes.paper}>Developed with React <p style={{ marginBottom: '15px'}}><img src={reactLogo} alt="react logo" style={{ width: '50px', height: 'auto'}} /></p></h4>
+            <p className={classes.paper}><span dangerouslySetInnerHTML={{ "__html": "&copy;" }} />{ props.year } uchenna ihe</p>
           </Grid>
         </Grid>
       </div>
     );
+}
+
+Footer.propTypes = {
+  year: PropTypes.number,
 }
 
 export default Footer
