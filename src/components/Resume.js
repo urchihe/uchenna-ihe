@@ -31,7 +31,7 @@ const Resume = () => {
     return (
         <div>
             <Grid container spacing={0}>
-                <Grid item xs={12} id="contact">
+                <Grid item xs={12} id="aboutMe">
                     <Container maxWidth="lg" className="no-padding about-me">
                         <h3 className={classes.paper}>
                             I have a Bachelor of Technology degree in Mathematics and Computer Science (Second Class
