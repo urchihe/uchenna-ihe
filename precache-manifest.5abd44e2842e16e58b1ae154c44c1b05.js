@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "893d7e807b7ffe7c30dead74203760b7",
+    "revision": "b8c0be5c5a3b7aa1d91154d8dd070249",
     "url": "/uchenna-ihe/index.html"
   },
   {
-    "revision": "3eef8c164d5e8766e171",
+    "revision": "b59a3aa4c90d60c89125",
     "url": "/uchenna-ihe/static/css/main.f105c6c7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/uchenna-ihe/static/js/2.b7ae52bf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3eef8c164d5e8766e171",
-    "url": "/uchenna-ihe/static/js/main.28875da7.chunk.js"
+    "revision": "b59a3aa4c90d60c89125",
+    "url": "/uchenna-ihe/static/js/main.7f005f98.chunk.js"
   },
   {
     "revision": "5524ed237c9cbca60dc5",
