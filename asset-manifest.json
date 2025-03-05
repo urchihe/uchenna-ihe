@@ -1,30 +1,26 @@
 {
   "files": {
-    "main.css": "/uchenna-ihe/static/css/main.f105c6c7.chunk.css",
-    "main.js": "/uchenna-ihe/static/js/main.7f005f98.chunk.js",
-    "main.js.map": "/uchenna-ihe/static/js/main.7f005f98.chunk.js.map",
-    "runtime-main.js": "/uchenna-ihe/static/js/runtime-main.f60d1061.js",
-    "runtime-main.js.map": "/uchenna-ihe/static/js/runtime-main.f60d1061.js.map",
-    "static/js/2.b7ae52bf.chunk.js": "/uchenna-ihe/static/js/2.b7ae52bf.chunk.js",
-    "static/js/2.b7ae52bf.chunk.js.map": "/uchenna-ihe/static/js/2.b7ae52bf.chunk.js.map",
+    "main.css": "/uchenna-ihe/static/css/main.144f1a94.css",
+    "main.js": "/uchenna-ihe/static/js/main.2c9b7159.js",
+    "static/media/pic.png": "/uchenna-ihe/static/media/pic.c320402d0ac7f8e22e1d.png",
+    "static/media/saasnova.webp": "/uchenna-ihe/static/media/saasnova.d6f268838df66af4ee64.webp",
+    "static/media/Python.png": "/uchenna-ihe/static/media/Python.50caf9f4b3146cbe7470.png",
+    "static/media/node.png": "/uchenna-ihe/static/media/node.45da1b9978fb9ed0ca9f.png",
+    "static/media/php.png": "/uchenna-ihe/static/media/php.0ae7d04ff55e3090209d.png",
+    "static/media/ux-iu.png": "/uchenna-ihe/static/media/ux-iu.b5ad5e3381c2310bc0d7.png",
+    "static/media/react.svg": "/uchenna-ihe/static/media/react.103b5fa18196d5665a7e12318285c916.svg",
+    "static/media/slick.svg": "/uchenna-ihe/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/uchenna-ihe/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/uchenna-ihe/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/uchenna-ihe/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/uchenna-ihe/index.html",
-    "precache-manifest.5abd44e2842e16e58b1ae154c44c1b05.js": "/uchenna-ihe/precache-manifest.5abd44e2842e16e58b1ae154c44c1b05.js",
-    "service-worker.js": "/uchenna-ihe/service-worker.js",
-    "static/css/main.f105c6c7.chunk.css.map": "/uchenna-ihe/static/css/main.f105c6c7.chunk.css.map",
-    "static/js/2.b7ae52bf.chunk.js.LICENSE.txt": "/uchenna-ihe/static/js/2.b7ae52bf.chunk.js.LICENSE.txt",
-    "static/media/Python.png": "/uchenna-ihe/static/media/Python.010e6b03.png",
-    "static/media/database.svg": "/uchenna-ihe/static/media/database.158dabdc.svg",
-    "static/media/node.png": "/uchenna-ihe/static/media/node.9ebf3baf.png",
-    "static/media/php.png": "/uchenna-ihe/static/media/php.39dff610.png",
-    "static/media/pic.png": "/uchenna-ihe/static/media/pic.f7aecbdf.png",
-    "static/media/react.svg": "/uchenna-ihe/static/media/react.ee7cd8ed.svg",
-    "static/media/ux-iu.png": "/uchenna-ihe/static/media/ux-iu.a26fd6b2.png",
-    "static/media/vue.svg": "/uchenna-ihe/static/media/vue.9075ee3c.svg"
+    "static/media/database.svg": "/uchenna-ihe/static/media/database.f4e56f2074affcc35d8dbffb9b059b51.svg",
+    "static/media/vue.svg": "/uchenna-ihe/static/media/vue.67298e1c75ea403ea1f7e7fc233cf17f.svg",
+    "main.144f1a94.css.map": "/uchenna-ihe/static/css/main.144f1a94.css.map",
+    "main.2c9b7159.js.map": "/uchenna-ihe/static/js/main.2c9b7159.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.f60d1061.js",
-    "static/js/2.b7ae52bf.chunk.js",
-    "static/css/main.f105c6c7.chunk.css",
-    "static/js/main.7f005f98.chunk.js"
+    "static/css/main.144f1a94.css",
+    "static/js/main.2c9b7159.js"
   ]
 }
