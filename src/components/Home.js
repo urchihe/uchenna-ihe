@@ -1,349 +1,175 @@
 import React from 'react';
-import profilePic from '../assets/images/pic.png'
-import {makeStyles} from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
-import Container from '@material-ui/core/Container'
-import vueLogo from '../assets/images/vue.svg'
-import reactLogo from '../assets/images/react.svg'
-import pythonLogo from '../assets/images/Python.png'
-import phpLogo from '../assets/images/php.png'
-import jqueryLogo from '../assets/images/jquery.png'
-import nodeLogo from '../assets/images/node.png'
-import uiLogo from '../assets/images/ux-iu.png'
-import databaseLogo from '../assets/images/database.svg'
-import {PropTypes} from 'prop-types'
-import {Link} from "react-scroll"
-import Resume from './Resume'
+import { Container, Typography, Box, Grid } from '@mui/material';
+import { Link } from 'react-scroll';
+import Resume from './Resume';
+import profilePic from '../assets/images/pic.png';
+import vueLogo from '../assets/images/vue.svg';
+import reactLogo from '../assets/images/react.svg';
+import pythonLogo from '../assets/images/Python.png';
+import phpLogo from '../assets/images/php.png';
+import jqueryLogo from '../assets/images/jquery.png';
+import nodeLogo from '../assets/images/node.png';
+import uiLogo from '../assets/images/ux-iu.png';
+import redisLogo from '../assets/images/redis.png';
+import saasNovaLogo from '../assets/images/saasnova.webp';
+import databaseLogo from '../assets/images/database.svg';
+import BuildIcon from "@mui/icons-material/Build";
+import Contact from "./Contact";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        flexGrow: 1,
-    },
-    paper: {
-        padding: theme.spacing(1),
-        textAlign: 'center',
-        color: 'white',
-    },
-    gridLeft: {
-        padding: '30px '
-    },
-    gridRight: {
-        padding: '30px'
-    },
-}));
+const skills = [
+    { name: 'Python', level: 60 },
+    { name: 'C#', level: 60 },
+    { name: 'PHP', level: 95 },
+    { name: 'JavaScript', level: 90 },
+    { name: 'HTML', level: 90 },
+    { name: 'CSS', level: 90 },
+    { name: 'SASS/SCSS', level: 90 },
+    { name: 'Bootstrap', level: 90 },
+    { name: 'SQL', level: 90 }
+];
 
+const frameworks = [
+    { name: 'Vue', level: 98 },
+    { name: 'Vuex', level: 95 },
+    { name: 'React', level: 90 },
+    { name: 'Redux', level: 90 },
+    { name: 'Redux-Saga', level: 90 },
+    { name: 'Node (Express)', level: 80 },
+    { name: 'Git', level: 90 },
+    { name: 'Docker', level: 90 },
+    { name: 'React Native', level: 90 }
+];
 
-const Home = ({contacts}) => {
-    const classes = useStyles();
+const techStack = [
+    { title: 'Vue', logo: vueLogo, skills: ['Vue', 'Vuex', 'Vue Router', 'Axios', 'Pina'] },
+    { title: 'React', logo: reactLogo, skills: ['React', 'Redux', 'Redux-Saga', 'React-Router'] },
+    { title: 'UX/UI', logo: uiLogo, skills: ['Material-UI', 'Vuetify', 'SASS/SCSS'] },
+    { title: 'jQuery', logo: jqueryLogo, skills: ['jQuery'] }
+];
+
+const backendStack = [
+    { title: 'PHP', logo: phpLogo, skills: ['Laravel', 'Symfony', 'Core PHP', 'CodeIgniter'] },
+    { title: 'Node', logo: nodeLogo, skills: ['Node.js', 'Express.js', 'Nest.js'] },
+    { title: 'Python', logo: pythonLogo, skills: ['Python', 'Django'] },
+    { title: 'Database', logo: databaseLogo, skills: ['SQL', 'MySQL', 'MariaDB', 'MongoDB', 'Elasticsearch'] },
+    { title: 'Caching & Messaging', logo: redisLogo, skills: ['Redis', 'RabbitMQ', 'Kafka'] },
+    { title: 'SaaS & LMS', logo: saasNovaLogo, skills: ['SaaS Nova', 'Moodle LMS'] }
+];
+
+const Home = ({ contacts }) => {
     return (
         <div>
-            <Grid item xs={12}>
-                <img className="image-logo" src={profilePic} alt="logo"/>
-            </Grid>
-            <Grid item xs={12} className="image-content">
-                <Container maxWidth="xs">
-                    <Link
-                        activeClass="active-link"
-                        to="contact"
-                        spy={true}
-                        hashSpy={true}
-                        smooth={true}
-                        offset={-70}
-                        duration={200}
+            <div className="home-container">
+                <Grid container justifyContent="center">
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            width: '800px',
+                            padding: 3,
+                            backgroundColor: '#fff',
+                            borderRadius: '10px',
+                            boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
+                            marginBottom: 4,
+                        }}
                     >
-                        <h3> Hello! My name is Uchenna Ihe <br/>
-                            I am a full-stack Software Developer, I work remotely as a full-time freelancer.Do you have
-                            a project?&nbsp;&nbsp; CONTACT ME!
-                        </h3>
-                    </Link>
-                </Container>
-            </Grid>
-            <Grid item xs={12} id="aboutMe">
-                <Grid item xs={12}>
-                    <h2 className="no-padding head-font">ABOUT ME</h2>
-                </Grid>
-                <Resume/>
-            </Grid>
-            <Grid container spacing={2} id="skills">
-                <Grid item xs={12}>
-                    <h2 className="no-padding head-font">SKILLS</h2>
-                </Grid>
-                <Grid item xs={12} md={6} lg={6} xl={6}>
-                    <Container maxWidth="lg">
-                        <span className="skills">python</span><span className="level">60%</span>
-                        <div className="meter">
-                            <span style={{width: '60%'}}><span className="progress"/></span>
-                        </div>
-                        <span className="skills">C#</span><span className="level">60%</span>
-                        <div className="meter">
-                            <span style={{width: '60%'}}><span className="progress"/></span>
-                        </div>
-                        <span className="skills">php</span><span className="level">95%</span>
-                        <div className="meter">
-                            <span style={{width: '95%'}}><span className="progress"/></span>
-                        </div>
-                        <span className="skills">javascript</span><span className="level">90%</span>
-                        <div className="meter">
-                            <span style={{width: '90%'}}><span className="progress"/></span>
-                        </div>
-                        <span className="skills">HTML</span><span className="level">90%</span>
-                        <div className="meter">
-                            <span style={{width: '90%'}}><span className="progress"/></span>
-                        </div>
-                        <span className="skills">css</span><span className="level">90%</span>
-                        <div className="meter">
-                            <span style={{width: '90%'}}><span className="progress"/></span>
-                        </div>
-                        <span className="skills">sass/scss</span><span className="level">90%</span>
-                        <div className="meter">
-                            <span style={{width: '90%'}}><span className="progress"/></span>
-                        </div>
-                        <span className="skills">bootstrap</span><span className="level">90%</span>
-                        <div className="meter">
-                            <span style={{width: '90%'}}><span className="progress"/></span>
-                        </div>
-                        <span className="skills">sql</span><span className="level">90%</span>
-                        <div className="meter">
-                            <span style={{width: '90%'}}><span className="progress"/></span>
-                        </div>
-                    </Container>
-                </Grid>
-                <Grid item xs={12} md={6} lg={6} xl={6}>
-                    <Container maxWidth="lg">
-                        <div>
-                            <span className="skills">vue</span><span className="level">98%</span>
-                            <div className="meter">
-                                <span style={{width: '98%'}}><span className="progress"/></span>
-                            </div>
-                            <span className="skills">vuex</span><span className="level">95%</span>
-                            <div className="meter">
-                                <span style={{width: '95%'}}><span className="progress"/></span>
-                            </div>
-                            <span className="skills">react</span><span className="level">90%</span>
-                            <div className="meter">
-                                <span style={{width: '90%'}}><span className="progress"/></span>
-                            </div>
-                            <span className="skills">redux</span><span className="level">90%</span>
-                            <div className="meter">
-                                <span style={{width: '90%'}}><span className="progress"/></span>
-                            </div>
-                            <span className="skills">redux-saga</span><span className="level">90%</span>
-                            <div className="meter">
-                                <span style={{width: '90%'}}><span className="progress"/></span>
-                            </div>
-                            <span className="skills">node(express)</span><span className="level">80%</span>
-                            <div className="meter">
-                                <span style={{width: '80%'}}><span className="progress"/></span>
-                            </div>
-                            <span className="skills">git</span><span className="level">90%</span>
-                            <div className="meter">
-                                <span style={{width: '90%'}}><span className="progress"/></span>
-                            </div>
-                            <span className="skills">docker</span><span className="level">90%</span>
-                            <div className="meter">
-                                <span style={{width: '90%'}}><span className="progress"/></span>
-                            </div>
-                            <span className="skills">React NATIVE</span><span className="level">90%</span>
-                            <div className="meter">
-                                <span style={{width: '90%'}}><span className="progress"/></span>
-                            </div>
-                        </div>
-                    </Container>
-                </Grid>
-            </Grid>
-            <Grid container spacing={2} id="frontend">
-                <Grid item xs={12}>
-                    <h2 className="no-padding head-font">FRONTEND DEVELOPMENT</h2>
-                </Grid>
-                <Grid item xs={12} sm={6} lg={3}>
-                    <Container maxWidth="lg">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front">
-                                    <h1> VUE </h1>
-                                    <img src={vueLogo} alt="vue logo" style={{width: '200px', height: '150px'}}/>
-                                </div>
-                                <div className="flip-card-back">
-                                    <h4>vue</h4>
-                                    <h4>vuex</h4>
-                                    <h4>vue-router</h4>
-                                    <h4>axios</h4>
-                                    <h4>babel-eslint</h4>
-                                    <h4>eslint</h4>
-                                    <h4> .......</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </Grid>
-                <Grid item xs={12} sm={6} lg={3}>
-                    <Container maxWidth="lg">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front">
-                                    <h1> REACT </h1>
-                                    <img src={reactLogo} alt="react logo" style={{width: '200px', height: '150px'}}/>
-                                </div>
-                                <div className="flip-card-back">
-                                    <h4>react</h4>
-                                    <h4>redux</h4>
-                                    <h4>redux-saga</h4>
-                                    <h4>apisauce</h4>
-                                    <h4>reduxsauce</h4>
-                                    <h4>react-router</h4>
-                                    <h4> .......</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </Grid>
-                <Grid item xs={12} sm={6} lg={3}>
-                    <Container maxWidth="lg">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front">
-                                    <h1> UX/UI </h1>
-                                    <img src={uiLogo} alt="ux-ui logo" style={{width: '200px', height: '150px'}}/>
-                                </div>
-                                <div className="flip-card-back">
-                                    <h4>element-ui</h4>
-                                    <h4>material-ui</h4>
-                                    <h4>vuetify</h4>
-                                    <h4>sass/scss</h4>
-                                    <h4>css</h4>
-                                    <h4>html</h4>
-                                    <h4> .......</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </Grid>
-                <Grid item xs={12} sm={6} lg={3}>
-                    <Container maxWidth="lg">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front">
-                                    <h1> JQUERY </h1>
-                                    <img src={jqueryLogo} alt="jquery logo" style={{width: '200px', height: '100px'}}/>
-                                </div>
-                                <div className="flip-card-back">
-                                    <h4>jquery</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </Grid>
-            </Grid>
-            <Grid container spacing={2} id="backend">
-                <Grid item xs={12}>
-                    <h2 className="no-padding head-font">BACKEND DEVELOPMENT</h2>
-                </Grid>
-                <Grid item xs={12} sm={6} lg={3}>
-                    <Container maxWidth="sm">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front">
-                                    <h1> PHP </h1>
-                                    <img src={phpLogo} alt="php logo" style={{width: '200px', height: '150px'}}/>
-                                </div>
-                                <div className="flip-card-back">
-                                    <h4>laravel</h4>
-                                    <h4>symfony</h4>
-                                    <h4>core php</h4>
-                                    <h4>Codeigniter</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </Grid>
-                <Grid item xs={12} sm={6} lg={3}>
-                    <Container maxWidth="sm">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front">
-                                    <h1> NODE </h1>
-                                    <img src={nodeLogo} alt="node logo" style={{width: '200px', height: '150px'}}/>
-                                </div>
-                                <div className="flip-card-back">
-                                    <h4>node</h4>
-                                    <h4>express.js</h4>
-                                    <h4>nest.js</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </Grid>
-                <Grid item xs={12} sm={6} lg={3}>
-                    <Container maxWidth="sm">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front">
-                                    <h1> PYTHON </h1>
-                                    <img src={pythonLogo} alt="python logo" style={{width: '200px', height: '150px'}}/>
-                                </div>
-                                <div className="flip-card-back">
-                                    <h4>python</h4>
-                                    <h4>django</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </Grid>
-                <Grid item xs={12} sm={6} lg={3}>
-                    <Container maxWidth="sm">
-                        <div className="flip-card">
-                            <div className="flip-card-inner">
-                                <div className="flip-card-front">
-                                    <h1> DATABASE </h1>
-                                    <img src={databaseLogo} alt="database logo"
-                                         style={{width: '200px', height: '150px'}}/>
-                                </div>
-                                <div className="flip-card-back">
-                                    <h4>sql</h4>
-                                    <h4>mysql</h4>
-                                    <h4>mongodb</h4>
-                                    <h4>elasticsearch</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </Container>
-                </Grid>
-            </Grid>
-            <Grid item xs={12} id="mobile">
-                <h2 className="no-padding head-font">MOBILE APPLICATION DEVELOPMENT</h2>
-                <Container maxWidth="xs">
-                    <div className="flip-card">
-                        <div className="flip-card-inner">
-                            <div className="flip-card-front">
-                                <h1> REACT NATIVE </h1>
-                                <img src={reactLogo} alt="react native logo" style={{width: '200px', height: '150px'}}/>
-                            </div>
-                            <div className="flip-card-back">
-                                <h4>react-native</h4>
-                                <h4>react</h4>
-                                <h4>redux</h4>
-                                <h4>redux-saga</h4>
-                                <h4>apisauce</h4>
-                                <h4>reduxsauce</h4>
-                                <h4> .......</h4>
-                            </div>
-                        </div>
-                    </div>
-                </Container>
-            </Grid>
-            <Grid item xs={12} id="contact">
-                <h2 className="no-padding head-font">CONTACTS</h2>
-                <Container maxWidth="md">
-                    <h3 className={classes.paper}> Email : {contacts.email}</h3>
-                    <h3 className={classes.paper}> Phone : {contacts.phone}</h3>
-                </Container>
-            </Grid>
+                        {/* Image Section */}
+                        <Box sx={{ flexShrink: 0, marginRight: 2 }}>
+                            <img
+                                src={profilePic}
+                                alt="Profile"
+                                style={{
+                                    width: '80px',
+                                    height: '80px',
+                                    borderRadius: '50%',
+                                }}
+                            />
+                        </Box>
 
+                        {/* Text Section */}
+                        <Box>
+                            <Link to="contact" smooth={true} duration={200}>
+                                <Typography variant="h5" gutterBottom>
+                                    Hello! My name is Uchenna Ihe
+                                </Typography>
+                                <Typography variant="body1">
+                                    I am a Senior Full-Stack Engineer with expertise in SaaS, <strong>Laravel Nova</strong>, <strong>React</strong>,
+                                    <strong>Vue</strong>, <strong>Symfony</strong>, <strong>Multi-Tenancy</strong>, <strong>DevOps</strong> (Docker, CI/CD),
+                                    and <strong>Business Automation</strong>. Based in <strong>Lagos State, Nigeria</strong>.
+                                    <br /><br />
+                                    Need a project done? <strong>CONTACT ME!</strong>
+                                </Typography>
+                            </Link>
+                        </Box>
+                    </Box>
+                </Grid>
+            </div>
+
+            <Container maxWidth="md">
+                <Resume />
+            </Container>
+
+            {/* Skills Section */}
+            <Container maxWidth="md" id="skills" sx={{ marginTop: 4 }}>
+                <Typography variant="h5" sx={{ marginBottom: 2, display: 'flex', alignItems: 'center' }}>
+                    <BuildIcon sx={{ marginRight: 1 }} /> Skills
+                </Typography>
+                <Grid container spacing={4}>
+                    {[skills, frameworks].map((list, index) => (
+                        <Grid item xs={12} md={6} key={index}>
+                            {list.map(skill => (
+                                <Box key={skill.name} my={2}>
+                                    <Typography variant="body1">
+                                        {skill.name} - {skill.level}%
+                                    </Typography>
+                                    <Box sx={{ width: '100%', bgcolor: '#ddd', borderRadius: '5px' }}>
+                                        <Box sx={{ width: `${skill.level}%`, bgcolor: 'primary.main', height: 10, borderRadius: '5px' }} />
+                                    </Box>
+                                </Box>
+                            ))}
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+
+            {/* Frontend Section */}
+            <Container maxWidth="md" id="frontend" sx={{ marginTop: 4 }}>
+                <Typography variant="h4" gutterBottom align="center">FRONTEND DEVELOPMENT</Typography>
+                <Grid container spacing={4}>
+                    {techStack.map(({ title, logo, skills }) => (
+                        <Grid item xs={12} sm={6} lg={3} key={title}>
+                            <Box textAlign="center">
+                                <Typography variant="h6">{title}</Typography>
+                                <img src={logo} alt={title} width={100} />
+                                <Typography variant="body2">{skills.join(', ')}</Typography>
+                            </Box>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+
+            {/* Backend Section */}
+            <Container maxWidth="md" id="backend" sx={{ marginTop: 4 }}>
+                <Typography variant="h4" gutterBottom align="center">BACKEND DEVELOPMENT</Typography>
+                <Grid container spacing={4}>
+                    {backendStack.map(({ title, logo, skills }) => (
+                        <Grid item xs={12} sm={6} lg={3} key={title}>
+                            <Box textAlign="center">
+                                <Typography variant="h6">{title}</Typography>
+                                <img src={logo} alt={title} width={100} />
+                                <Typography variant="body2">{skills.join(', ')}</Typography>
+                            </Box>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
+
+            {/* Contact Section */}
+            <Container maxWidth="md" id="contact" sx={{ marginTop: 4 }}>
+                <Contact contacts={contacts}/>
+            </Container>
         </div>
     );
 };
 
-Home.propTypes = {
-    contacts: PropTypes.object,
-}
 export default Home;

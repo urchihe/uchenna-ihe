@@ -1,43 +1,28 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
-import reactLogo from '../assets/images/react.svg'
-import { PropTypes } from 'prop-types'
+import { Box, Typography } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import { Favorite } from '@mui/icons-material';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    paper: {
-      marginTop: '10px',
-      padding: theme.spacing(1),
-      textAlign: 'center',
-      color: 'white',
-    },
-    gridLeft: {
-        padding: '30px '
-      },
-    gridRight: {
-    padding: '30px'
-    },
-  }));
-  
-const Footer = (props) => {
-    const classes = useStyles();
+const Footer = ({ year }) => {
     return (
-      <div>
-        <Grid container spacing={0}>
-          <Grid item xs={12} id="contact">
-            <h4 className={classes.paper}>Developed with React <p style={{ marginBottom: '15px'}}><img src={reactLogo} alt="react logo" style={{ width: '50px', height: 'auto'}} /></p></h4>
-            <p className={classes.paper}><span dangerouslySetInnerHTML={{ "__html": "&copy;" }} />{ props.year } uchenna ihe</p>
-          </Grid>
-        </Grid>
-      </div>
+        <Box sx={{ flexGrow: 1, backgroundColor: '#333', padding: '20px 0' }}>
+            <Grid container justifyContent="center">
+                <Grid item xs={12} textAlign="center">
+                    <Typography
+                        sx={{
+                            color: 'white',
+                            fontSize: '14px',
+                            fontWeight: 300,
+                        }}
+                    >
+                        <Favorite sx={{ color: 'red', verticalAlign: 'middle', marginRight: 1 }} />
+                        <span dangerouslySetInnerHTML={{ __html: '&copy;' }} />
+                        {year} Uchenna Ihe
+                    </Typography>
+                </Grid>
+            </Grid>
+        </Box>
     );
-}
+};
 
-Footer.propTypes = {
-  year: PropTypes.number,
-}
-
-export default Footer
+export default Footer;

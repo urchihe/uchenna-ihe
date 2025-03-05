@@ -17,8 +17,11 @@ body {
 // Outer navigation wrapper
 .navigation {
   height: $nav-height;
-  background: $nav-background;
+  align-content: center;
+  background: $nav-font-color;
+  color: $nav-background;
   z-index: 1000;
+  font-size: calc(10px + 1vmin);
 }
 
 // Logo and branding
@@ -29,6 +32,7 @@ body {
   line-height: $nav-height;
   text-transform: uppercase;
   font-size: 1.4em;
+  color: $nav-background;
   a,
   a:visited{
     color: $nav-font-color;
@@ -42,12 +46,11 @@ body {
 }
 // Container with no padding for navbar
 .nav-container {
-  max-width: $content-width;
   margin: 0 auto;
   padding: 0;
 }
 
-// Navigation 
+// Navigation
 nav {
   float: right;
   ul {
@@ -62,8 +65,8 @@ nav {
         display: block;
         padding: 0 20px;
         line-height: $nav-height;
-        background: $nav-background;
-        color: $nav-font-color;
+        background: $nav-font-color;
+        color: $nav-background;
         text-decoration: none;
         &:hover {
           background: $link-hover-color;
@@ -75,7 +78,6 @@ nav {
           content: " \25be";
         }
       }
-       // Dropdown list
       ul li {
         min-width: 190px;
         a {
@@ -86,7 +88,6 @@ nav {
     }
   }
 }
-// Dropdown list binds to JS toggle event
 .nav-dropdown {
   position: absolute;
   display: none;
@@ -179,7 +180,7 @@ nav {
   }
 }
 
-// Page content 
+// Page content
 article {
   max-width: $content-width;
   margin: 0 auto;
@@ -187,7 +188,7 @@ article {
 }
 img.image-logo {
   width: 100%;
-  height: 1600px;
+  height: 400px;
   padding: 0;
   overflow:none;
 }
@@ -222,7 +223,7 @@ img.image-logo {
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%;
+  min-width: 100%;
 }
 .no-padding {
   padding: 0;
@@ -230,7 +231,7 @@ img.image-logo {
 .fix-picture {
   position: static;
 }
-.meter { 
+.meter {
   height: 7px;
   position: relative;
   background: #f3efe6;
@@ -251,9 +252,9 @@ img.image-logo {
 .progress {
   background-color: $link-hover-color;
   -webkit-animation: progressBar 3s ease-in-out;
-  -webkit-animation-fill-mode:both; 
+  -webkit-animation-fill-mode:both;
   -moz-animation: progressBar 3s ease-in-out;
-  -moz-animation-fill-mode:both; 
+  -moz-animation-fill-mode:both;
 }
 
 @-webkit-keyframes progressBar {
