@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/uchenna-ihe/static/css/main.a2aa6161.css",
-    "main.js": "/uchenna-ihe/static/js/main.64f20226.js",
+    "main.js": "/uchenna-ihe/static/js/main.56ef1a39.js",
     "static/media/pic.png": "/uchenna-ihe/static/media/pic.c320402d0ac7f8e22e1d.png",
     "static/media/saasnova.webp": "/uchenna-ihe/static/media/saasnova.d6f268838df66af4ee64.webp",
     "static/media/Python.png": "/uchenna-ihe/static/media/Python.50caf9f4b3146cbe7470.png",
@@ -17,10 +17,10 @@
     "static/media/database.svg": "/uchenna-ihe/static/media/database.f4e56f2074affcc35d8dbffb9b059b51.svg",
     "static/media/vue.svg": "/uchenna-ihe/static/media/vue.67298e1c75ea403ea1f7e7fc233cf17f.svg",
     "main.a2aa6161.css.map": "/uchenna-ihe/static/css/main.a2aa6161.css.map",
-    "main.64f20226.js.map": "/uchenna-ihe/static/js/main.64f20226.js.map"
+    "main.56ef1a39.js.map": "/uchenna-ihe/static/js/main.56ef1a39.js.map"
   },
   "entrypoints": [
     "static/css/main.a2aa6161.css",
-    "static/js/main.64f20226.js"
+    "static/js/main.56ef1a39.js"
   ]
 }
