@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Uche Ihe CV",
+  "name": "Uchenna Ihe Portfolio",
+  "description": "A professional portfolio showcasing Uchenna Ihe's work.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +9,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "uche192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "uche512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
