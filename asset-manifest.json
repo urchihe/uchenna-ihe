@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/uchenna-ihe/static/css/main.a2aa6161.css",
-    "main.js": "/uchenna-ihe/static/js/main.ad9337a7.js",
+    "main.js": "/uchenna-ihe/static/js/main.f77bff68.js",
     "static/media/pic.png": "/uchenna-ihe/static/media/pic.c320402d0ac7f8e22e1d.png",
     "static/media/slick.svg": "/uchenna-ihe/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/uchenna-ihe/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -9,10 +9,10 @@
     "static/media/slick.woff": "/uchenna-ihe/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/uchenna-ihe/index.html",
     "main.a2aa6161.css.map": "/uchenna-ihe/static/css/main.a2aa6161.css.map",
-    "main.ad9337a7.js.map": "/uchenna-ihe/static/js/main.ad9337a7.js.map"
+    "main.f77bff68.js.map": "/uchenna-ihe/static/js/main.f77bff68.js.map"
   },
   "entrypoints": [
     "static/css/main.a2aa6161.css",
-    "static/js/main.ad9337a7.js"
+    "static/js/main.f77bff68.js"
   ]
 }
