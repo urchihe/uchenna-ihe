@@ -1,7 +1,9 @@
 {
-  "homepage": "http://urchihe.github.io/uchenna-ihe/",
-  "name": "my-profile",
+  "homepage": "https://urchihe.github.io/uchenna-ihe/",
+  "name": "uchenna-ihe-portfolio",
   "version": "0.1.0",
+  "description": "The engineering portfolio of Uchenna Ihe, Senior Full Stack, DevOps and IoT Engineer.",
+  "author": "Uchenna Ihe",
   "private": true,
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.26.9",

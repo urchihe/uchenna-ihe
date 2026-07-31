@@ -1,7 +1,7 @@
 {
-  "short_name": "Uche Ihe CV",
-  "name": "Uchenna Ihe Portfolio",
-  "description": "A professional portfolio showcasing Uchenna Ihe's work.",
+  "short_name": "Uchenna Ihe",
+  "name": "Uchenna Ihe — Engineering Portfolio",
+  "description": "Senior Full Stack, DevOps and IoT Engineer building scalable SaaS, real-time and cloud platforms.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -21,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0b1420",
+  "background_color": "#0b1420"
 }
