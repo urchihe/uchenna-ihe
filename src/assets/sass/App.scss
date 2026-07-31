@@ -61,12 +61,14 @@ h1 em { color: var(--accent); }
 .experience-stamp { position: absolute; left: -56px; top: 44px; width: 124px; height: 124px; border-radius: 50%; background: var(--accent-soft); color: var(--ink); display: grid; place-content: center; text-align: center; transform: rotate(-7deg); }
 .experience-stamp strong { font-size: 35px; line-height: 1; }
 .experience-stamp span { font: 500 10px/1.4 'IBM Plex Mono', monospace; letter-spacing: .08em; margin-top: 5px; }
-.code-card { position: absolute; right: -24px; bottom: -27px; width: 315px; min-height: 164px; background: rgba(17,27,39,.94); backdrop-filter: blur(10px); padding: 20px 22px; box-shadow: 0 20px 50px rgba(0,0,0,.28); display: grid; align-content: start; gap: 8px; }
+.code-card { position: absolute; right: -24px; bottom: -27px; width: 365px; min-height: 190px; background: rgba(17,27,39,.94); backdrop-filter: blur(10px); padding: 20px 22px; box-shadow: 0 20px 50px rgba(0,0,0,.28); display: grid; align-content: start; gap: 8px; }
 .code-card > span { font: 11px 'IBM Plex Mono', monospace; letter-spacing: .11em; color: #b1bdca; margin-bottom: 7px; }
 .code-card code { color: #c3ccd6; font: 12px 'IBM Plex Mono', monospace; }
 .code-card b { color: var(--accent-soft); font-weight: 400; }
 .typing-label { color: #8291a2 !important; }
-.typing-line { min-height: 39px; line-height: 1.55; }
+.typing-lines { display: grid; gap: 7px; min-height: 48px; }
+.typing-line { display: flex; align-items: flex-start; min-height: 19px; line-height: 1.55; white-space: nowrap; }
+.typing-line > span { flex: 0 0 27px; color: #66788b; }
 .typing-cursor { display: inline-block; width: 2px; height: 14px; margin-left: 3px; background: var(--accent-soft); vertical-align: -2px; animation: typing-blink .75s step-end infinite; }
 .typing-progress { justify-self: end; color: #68788a; font: 9px 'IBM Plex Mono', monospace; letter-spacing: .1em; }
 @keyframes typing-blink { 50% { opacity: 0; } }
@@ -221,7 +223,8 @@ footer a { color: white; text-decoration: none; }
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .hero-meta { gap: 28px; margin-top: 50px; }
   .hero-visual { min-height: 430px; height: 115vw; }
-  .code-card { right: -12px; width: 275px; min-height: 174px; }
+  .code-card { right: -12px; width: 315px; min-height: 196px; padding: 18px; }
+  .typing-line { font-size: 10px !important; }
   .experience-stamp { width: 98px; height: 98px; left: -8px; }
   .about { padding-top: 90px; }
   .about-copy { padding-top: 5px; }

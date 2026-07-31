@@ -108,19 +108,19 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
-const capabilityPhrases = [
-  'scalable SaaS platforms',
-  'full-stack web & mobile products',
-  'DevOps & cloud automation',
-  'multi-tenant architectures',
-  'IoT & real-time systems',
-  'secure APIs & integrations',
-  'green-blue deployment pipelines',
+const capabilityPairs = [
+  ['Laravel APIs & SaaS backends', 'React, Next.js & Vue interfaces'],
+  ['NestJS & Node.js services', 'WebSockets & real-time systems'],
+  ['Stripe & payment integrations', 'Third-party APIs & automation'],
+  ['Docker & server configuration', 'Traefik, Nginx & SSL routing'],
+  ['AWS & Oracle Cloud deployments', 'CI/CD & green-blue releases'],
+  ['MySQL & PostgreSQL design', 'Redis, queues & performance'],
+  ['IoT & fleet-device platforms', 'Mobile-app APIs & integrations'],
 ];
 
 function CapabilityTypewriter() {
   const [phraseIndex, setPhraseIndex] = React.useState(0);
-  const [displayedText, setDisplayedText] = React.useState('');
+  const [characterCount, setCharacterCount] = React.useState(0);
   const [deleting, setDeleting] = React.useState(false);
 
   useEffect(() => {
@@ -128,43 +128,53 @@ function CapabilityTypewriter() {
       && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (reducedMotion) {
-      setDisplayedText(capabilityPhrases[0]);
+      setCharacterCount(Math.max(...capabilityPairs[0].map((line) => line.length)));
       return undefined;
     }
 
-    const phrase = capabilityPhrases[phraseIndex];
+    const pair = capabilityPairs[phraseIndex];
+    const longestLine = Math.max(...pair.map((line) => line.length));
     let delay = deleting ? 32 : 58;
 
-    if (!deleting && displayedText === phrase) delay = 1550;
-    if (deleting && displayedText === '') delay = 280;
+    if (!deleting && characterCount === longestLine) delay = 1750;
+    if (deleting && characterCount === 0) delay = 280;
 
     const timeout = window.setTimeout(() => {
-      if (!deleting && displayedText === phrase) {
+      if (!deleting && characterCount === longestLine) {
         setDeleting(true);
         return;
       }
 
-      if (deleting && displayedText === '') {
+      if (deleting && characterCount === 0) {
         setDeleting(false);
-        setPhraseIndex((current) => (current + 1) % capabilityPhrases.length);
+        setPhraseIndex((current) => (current + 1) % capabilityPairs.length);
         return;
       }
 
-      const nextLength = displayedText.length + (deleting ? -1 : 1);
-      setDisplayedText(phrase.slice(0, nextLength));
+      setCharacterCount((current) => current + (deleting ? -1 : 1));
     }, delay);
 
     return () => window.clearTimeout(timeout);
-  }, [deleting, displayedText, phraseIndex]);
+  }, [characterCount, deleting, phraseIndex]);
+
+  const displayedLines = capabilityPairs[phraseIndex].map(
+    (line) => line.slice(0, characterCount)
+  );
 
   return (
     <>
       <code className="typing-label">what_i_build:</code>
-      <code className="typing-line" aria-live="polite">
-        <b>“{displayedText}”</b><i className="typing-cursor" aria-hidden="true" />
-      </code>
+      <div className="typing-lines" aria-live="polite">
+        {displayedLines.map((line, index) => (
+          <code className="typing-line" key={capabilityPairs[phraseIndex][index]}>
+            <span>{String(index + 1).padStart(2, '0')}:</span>
+            <b>“{line}”</b>
+            {index === displayedLines.length - 1 && <i className="typing-cursor" aria-hidden="true" />}
+          </code>
+        ))}
+      </div>
       <small className="typing-progress">
-        {String(phraseIndex + 1).padStart(2, '0')} / {String(capabilityPhrases.length).padStart(2, '0')}
+        {String(phraseIndex + 1).padStart(2, '0')} / {String(capabilityPairs.length).padStart(2, '0')}
       </small>
     </>
   );
