@@ -108,6 +108,68 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+const capabilityPhrases = [
+  'scalable SaaS platforms',
+  'full-stack web & mobile products',
+  'DevOps & cloud automation',
+  'multi-tenant architectures',
+  'IoT & real-time systems',
+  'secure APIs & integrations',
+  'green-blue deployment pipelines',
+];
+
+function CapabilityTypewriter() {
+  const [phraseIndex, setPhraseIndex] = React.useState(0);
+  const [displayedText, setDisplayedText] = React.useState('');
+  const [deleting, setDeleting] = React.useState(false);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia
+      && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reducedMotion) {
+      setDisplayedText(capabilityPhrases[0]);
+      return undefined;
+    }
+
+    const phrase = capabilityPhrases[phraseIndex];
+    let delay = deleting ? 32 : 58;
+
+    if (!deleting && displayedText === phrase) delay = 1550;
+    if (deleting && displayedText === '') delay = 280;
+
+    const timeout = window.setTimeout(() => {
+      if (!deleting && displayedText === phrase) {
+        setDeleting(true);
+        return;
+      }
+
+      if (deleting && displayedText === '') {
+        setDeleting(false);
+        setPhraseIndex((current) => (current + 1) % capabilityPhrases.length);
+        return;
+      }
+
+      const nextLength = displayedText.length + (deleting ? -1 : 1);
+      setDisplayedText(phrase.slice(0, nextLength));
+    }, delay);
+
+    return () => window.clearTimeout(timeout);
+  }, [deleting, displayedText, phraseIndex]);
+
+  return (
+    <>
+      <code className="typing-label">what_i_build:</code>
+      <code className="typing-line" aria-live="polite">
+        <b>“{displayedText}”</b><i className="typing-cursor" aria-hidden="true" />
+      </code>
+      <small className="typing-progress">
+        {String(phraseIndex + 1).padStart(2, '0')} / {String(capabilityPhrases.length).padStart(2, '0')}
+      </small>
+    </>
+  );
+}
+
 function useAutoSlider(delay = 4200) {
   const sliderRef = useRef(null);
   const pauseUntil = useRef(0);
@@ -184,10 +246,8 @@ export default function Home({ profile }) {
             <span>YEARS OF<br />EXPERIENCE</span>
           </div>
           <div className="code-card" aria-hidden="true">
-            <span>UCHENNA.PROFILE</span>
-            <code>architecture: <b>“scalable”</b></code>
-            <code>delivery: <b>“automated”</b></code>
-            <code>mindset: <b>“product-first”</b></code>
+            <span>UCHENNA.CAPABILITIES</span>
+            <CapabilityTypewriter />
           </div>
         </div>
       </section>

@@ -15,6 +15,7 @@ test('renders Uchenna’s portfolio introduction', () => {
   );
   expect(container).toHaveTextContent('9+ years of experience');
   expect(container).toHaveTextContent('SaaS & IoT architecture');
+  expect(container).toHaveTextContent('UCHENNA.CAPABILITIES');
 
   const collaborationLink = Array.from(container.querySelectorAll('a')).find(
     (link) => link.textContent.includes('Let’s work together')
