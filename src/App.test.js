@@ -1,9 +1,19 @@
-import React from 'react';
-import { render } from '@testing-library/react';
+import React, { act } from 'react';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders Uchenna’s portfolio introduction', () => {
+  global.IS_REACT_ACT_ENVIRONMENT = true;
+  const container = document.createElement('div');
+  document.body.appendChild(container);
+  const root = createRoot(container);
+
+  act(() => root.render(<App />));
+
+  expect(container.querySelector('h1')).toHaveTextContent(
+    'I build digital products that scale.'
+  );
+
+  act(() => root.unmount());
+  container.remove();
 });

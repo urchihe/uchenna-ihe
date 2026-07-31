@@ -1,175 +1,220 @@
 import React from 'react';
-import { Container, Typography, Box, Grid } from '@mui/material';
-import { Link } from 'react-scroll';
-import Resume from './Resume';
 import profilePic from '../assets/images/pic.png';
-import vueLogo from '../assets/images/vue.svg';
-import reactLogo from '../assets/images/react.svg';
-import pythonLogo from '../assets/images/Python.png';
-import phpLogo from '../assets/images/php.png';
-import jqueryLogo from '../assets/images/jquery.png';
-import nodeLogo from '../assets/images/node.png';
-import uiLogo from '../assets/images/ux-iu.png';
-import redisLogo from '../assets/images/redis.png';
-import saasNovaLogo from '../assets/images/saasnova.webp';
-import databaseLogo from '../assets/images/database.svg';
-import BuildIcon from "@mui/icons-material/Build";
-import Contact from "./Contact";
+import VisitorAnalytics from './VisitorAnalytics';
 
-const skills = [
-    { name: 'Python', level: 60 },
-    { name: 'C#', level: 60 },
-    { name: 'PHP', level: 95 },
-    { name: 'JavaScript', level: 90 },
-    { name: 'HTML', level: 90 },
-    { name: 'CSS', level: 90 },
-    { name: 'SASS/SCSS', level: 90 },
-    { name: 'Bootstrap', level: 90 },
-    { name: 'SQL', level: 90 }
+const capabilities = [
+  {
+    number: '01',
+    title: 'Product engineering',
+    text: 'End-to-end SaaS products built with Laravel, React, Vue, Node.js and clean, maintainable APIs.',
+    tags: ['Laravel', 'React', 'Vue', 'Node.js'],
+  },
+  {
+    number: '02',
+    title: 'Platform & DevOps',
+    text: 'Cloud-ready infrastructure, containerized services and automated delivery designed for dependable releases.',
+    tags: ['Docker', 'AWS', 'CI/CD', 'Nginx'],
+  },
+  {
+    number: '03',
+    title: 'SaaS architecture',
+    text: 'Secure multi-tenant systems with isolated data, custom domains, billing controls and feature-based access.',
+    tags: ['Multi-tenancy', 'Redis', 'PostgreSQL'],
+  },
 ];
 
-const frameworks = [
-    { name: 'Vue', level: 98 },
-    { name: 'Vuex', level: 95 },
-    { name: 'React', level: 90 },
-    { name: 'Redux', level: 90 },
-    { name: 'Redux-Saga', level: 90 },
-    { name: 'Node (Express)', level: 80 },
-    { name: 'Git', level: 90 },
-    { name: 'Docker', level: 90 },
-    { name: 'React Native', level: 90 }
+const roles = [
+  {
+    dates: 'MAR 2025 — PRESENT',
+    role: 'Full Stack & DevOps Engineer',
+    company: 'Paxform',
+    location: 'Remote · Australia',
+    text: 'Leading platform modernization across a multi-tenant form and workflow product. Shipped plan-based access control, tenant-isolated domains, databases and storage, a GrapesJS email builder, and a Dockerized monorepo with zero-downtime delivery.',
+    stat: '35%',
+    statLabel: 'API performance improvement',
+  },
+  {
+    dates: 'JUN 2024 — MAR 2025',
+    role: 'Senior Full Stack & DevOps Engineer',
+    company: 'DoviLearn / BulletLMS',
+    location: 'Remote · Nigeria',
+    text: 'Rebuilt a broken LMS as a scalable SaaS platform, added international payments, automated deployments and backups, and migrated the infrastructure for greater reliability.',
+    stat: '80%',
+    statLabel: 'fewer manual deployment errors',
+  },
+  {
+    dates: 'APR 2019 — MAY 2024',
+    role: 'Full Stack Engineer',
+    company: 'The Coding Machine',
+    location: 'Remote · France',
+    text: 'Built enterprise web and mobile products with Laravel, Symfony, Node.js, React and Vue, supporting Dockerized workloads and AWS infrastructure across distributed teams.',
+    stat: '25%',
+    statLabel: 'reduction in production errors',
+  },
 ];
 
-const techStack = [
-    { title: 'Vue', logo: vueLogo, skills: ['Vue', 'Vuex', 'Vue Router', 'Axios', 'Pina'] },
-    { title: 'React', logo: reactLogo, skills: ['React', 'Redux', 'Redux-Saga', 'React-Router'] },
-    { title: 'UX/UI', logo: uiLogo, skills: ['Material-UI', 'Vuetify', 'SASS/SCSS'] },
-    { title: 'jQuery', logo: jqueryLogo, skills: ['jQuery'] }
+const selectedWork = [
+  {
+    type: 'MULTI-TENANT SAAS',
+    name: 'Paxform',
+    description: 'An adaptive forms and workflow platform with dynamic logic, tenant isolation, custom infrastructure and subscription-based feature control.',
+    stack: 'React · Laravel · Docker · AWS',
+    href: 'https://www.paxform.com',
+    className: 'project-paxform',
+  },
+  {
+    type: 'LEARNING PLATFORM',
+    name: 'BulletLMS',
+    description: 'A resilient SaaS learning platform supporting rich learning formats, global payments, automated deployments and business workflows.',
+    stack: 'Laravel · Vue.js · DigitalOcean',
+    href: 'https://www.bulletlms.com',
+    className: 'project-bullet',
+  },
+  {
+    type: 'PRODUCT PORTFOLIO',
+    name: 'More shipped products',
+    description: 'SaaS applications, crowdfunding platforms, eCommerce products and mobile experiences delivered for teams across Europe, Africa and Australia.',
+    stack: 'Web · Mobile · Cloud',
+    href: 'https://github.com/urchihe',
+    className: 'project-more',
+  },
 ];
 
-const backendStack = [
-    { title: 'PHP', logo: phpLogo, skills: ['Laravel', 'Symfony', 'Core PHP', 'CodeIgniter'] },
-    { title: 'Node', logo: nodeLogo, skills: ['Node.js', 'Express.js', 'Nest.js'] },
-    { title: 'Python', logo: pythonLogo, skills: ['Python', 'Django'] },
-    { title: 'Database', logo: databaseLogo, skills: ['SQL', 'MySQL', 'MariaDB', 'MongoDB', 'Elasticsearch'] },
-    { title: 'Caching & Messaging', logo: redisLogo, skills: ['Redis', 'RabbitMQ', 'Kafka'] },
-    { title: 'SaaS & LMS', logo: saasNovaLogo, skills: ['SaaS Nova', 'Moodle LMS'] }
-];
+const Arrow = () => <span aria-hidden="true">↗</span>;
 
-const Home = ({ contacts }) => {
-    return (
-        <div>
-            <div className="home-container">
-                <Grid container justifyContent="center">
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            width: '800px',
-                            padding: 3,
-                            backgroundColor: '#fff',
-                            borderRadius: '10px',
-                            boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)',
-                            marginBottom: 4,
-                        }}
-                    >
-                        {/* Image Section */}
-                        <Box sx={{ flexShrink: 0, marginRight: 2 }}>
-                            <img
-                                src={profilePic}
-                                alt="Profile"
-                                style={{
-                                    width: '80px',
-                                    height: '80px',
-                                    borderRadius: '50%',
-                                }}
-                            />
-                        </Box>
-
-                        {/* Text Section */}
-                        <Box>
-                            <Link to="contact" smooth={true} duration={200}>
-                                <Typography variant="h5" gutterBottom>
-                                    Hello! My name is Uchenna Ihe
-                                </Typography>
-                                <Typography variant="body1">
-                                    I am a Senior Full-Stack Engineer with expertise in SaaS, <strong>Laravel Nova</strong>, <strong>React</strong>,
-                                    <strong>Vue</strong>, <strong>Symfony</strong>, <strong>Multi-Tenancy</strong>, <strong>DevOps</strong> (Docker, CI/CD),
-                                    and <strong>Business Automation</strong>. Based in <strong>Lagos State, Nigeria</strong>.
-                                    <br /><br />
-                                    Need a project done? <strong>CONTACT ME!</strong>
-                                </Typography>
-                            </Link>
-                        </Box>
-                    </Box>
-                </Grid>
-            </div>
-
-            <Container maxWidth="md">
-                <Resume />
-            </Container>
-
-            {/* Skills Section */}
-            <Container maxWidth="md" id="skills" sx={{ marginTop: 4 }}>
-                <Typography variant="h5" sx={{ marginBottom: 2, display: 'flex', alignItems: 'center' }}>
-                    <BuildIcon sx={{ marginRight: 1 }} /> Skills
-                </Typography>
-                <Grid container spacing={4}>
-                    {[skills, frameworks].map((list, index) => (
-                        <Grid item xs={12} md={6} key={index}>
-                            {list.map(skill => (
-                                <Box key={skill.name} my={2}>
-                                    <Typography variant="body1">
-                                        {skill.name} - {skill.level}%
-                                    </Typography>
-                                    <Box sx={{ width: '100%', bgcolor: '#ddd', borderRadius: '5px' }}>
-                                        <Box sx={{ width: `${skill.level}%`, bgcolor: 'primary.main', height: 10, borderRadius: '5px' }} />
-                                    </Box>
-                                </Box>
-                            ))}
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
-
-            {/* Frontend Section */}
-            <Container maxWidth="md" id="frontend" sx={{ marginTop: 4 }}>
-                <Typography variant="h4" gutterBottom align="center">FRONTEND DEVELOPMENT</Typography>
-                <Grid container spacing={4}>
-                    {techStack.map(({ title, logo, skills }) => (
-                        <Grid item xs={12} sm={6} lg={3} key={title}>
-                            <Box textAlign="center">
-                                <Typography variant="h6">{title}</Typography>
-                                <img src={logo} alt={title} width={100} />
-                                <Typography variant="body2">{skills.join(', ')}</Typography>
-                            </Box>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
-
-            {/* Backend Section */}
-            <Container maxWidth="md" id="backend" sx={{ marginTop: 4 }}>
-                <Typography variant="h4" gutterBottom align="center">BACKEND DEVELOPMENT</Typography>
-                <Grid container spacing={4}>
-                    {backendStack.map(({ title, logo, skills }) => (
-                        <Grid item xs={12} sm={6} lg={3} key={title}>
-                            <Box textAlign="center">
-                                <Typography variant="h6">{title}</Typography>
-                                <img src={logo} alt={title} width={100} />
-                                <Typography variant="body2">{skills.join(', ')}</Typography>
-                            </Box>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Container>
-
-            {/* Contact Section */}
-            <Container maxWidth="md" id="contact" sx={{ marginTop: 4 }}>
-                <Contact contacts={contacts}/>
-            </Container>
+export default function Home({ profile }) {
+  return (
+    <>
+      <section className="hero section-pad" id="top">
+        <div className="hero-copy">
+          <div className="availability"><i /> Available for select projects</div>
+          <p className="eyebrow">SENIOR FULL STACK & DEVOPS ENGINEER</p>
+          <h1>I build digital products that <em>scale.</em></h1>
+          <p className="hero-intro">
+            I’m Uchenna, a product-minded engineer with 7+ years of experience turning ambitious ideas and legacy systems into reliable SaaS platforms.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#work">Explore my work <Arrow /></a>
+            <a className="text-link" href={`mailto:${profile.email}`}>Let’s work together <Arrow /></a>
+          </div>
+          <div className="hero-meta">
+            <div><span>BASED IN</span><strong>{profile.location}</strong></div>
+            <div><span>WORKING</span><strong>Worldwide / Remote</strong></div>
+          </div>
         </div>
-    );
-};
 
-export default Home;
+        <div className="hero-visual" aria-label="Portrait of Uchenna Ihe">
+          <div className="portrait-frame">
+            <img src={profilePic} alt="Uchenna Ihe at his workspace" />
+          </div>
+          <div className="experience-stamp">
+            <strong>7+</strong>
+            <span>YEARS OF<br />EXPERIENCE</span>
+          </div>
+          <div className="code-card" aria-hidden="true">
+            <span>UCHENNA.PROFILE</span>
+            <code>architecture: <b>“scalable”</b></code>
+            <code>delivery: <b>“automated”</b></code>
+            <code>mindset: <b>“product-first”</b></code>
+          </div>
+        </div>
+      </section>
+
+      <section className="marquee" aria-label="Core expertise">
+        <div>SAAS ARCHITECTURE <span>✦</span> FULL STACK ENGINEERING <span>✦</span> DEVOPS AUTOMATION <span>✦</span> MULTI-TENANT SYSTEMS</div>
+      </section>
+
+      <section className="about section-pad" id="about">
+        <div className="section-heading">
+          <p className="eyebrow">WHAT I DO</p>
+          <h2>Engineering beyond<br />the <em>feature.</em></h2>
+        </div>
+        <div className="about-copy">
+          <p>I bring product thinking, hands-on engineering and infrastructure discipline into one workflow—so the systems I build are as dependable behind the scenes as they are intuitive to use.</p>
+          <p>From architecture and APIs to interfaces and release pipelines, I help teams move from complexity to confident delivery.</p>
+        </div>
+      </section>
+
+      <section className="capabilities section-pad">
+        {capabilities.map((item) => (
+          <article className="capability" key={item.number}>
+            <span className="cap-number">{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+            <div className="tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+          </article>
+        ))}
+      </section>
+
+      <section className="experience section-pad" id="experience">
+        <div className="section-heading light">
+          <p className="eyebrow">EXPERIENCE</p>
+          <h2>A track record of<br /><em>meaningful impact.</em></h2>
+        </div>
+        <div className="timeline">
+          {roles.map((item) => (
+            <article className="role" key={item.company}>
+              <div className="role-date">{item.dates}</div>
+              <div className="role-main">
+                <h3>{item.role}</h3>
+                <p className="company">{item.company} <span>·</span> {item.location}</p>
+                <p>{item.text}</p>
+              </div>
+              <div className="role-stat"><strong>{item.stat}</strong><span>{item.statLabel}</span></div>
+            </article>
+          ))}
+        </div>
+        <a className="button button-light" href={`${process.env.PUBLIC_URL}/Uchenna_Ihe_CV.pdf`} download>Download full CV <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section className="work section-pad" id="work">
+        <div className="work-title">
+          <div className="section-heading">
+            <p className="eyebrow">SELECTED WORK</p>
+            <h2>Products built<br />to <em>perform.</em></h2>
+          </div>
+          <a className="text-link" href="https://github.com/urchihe" target="_blank" rel="noreferrer">View GitHub <Arrow /></a>
+        </div>
+        <div className="project-grid">
+          {selectedWork.map((project) => (
+            <a className={`project-card ${project.className}`} href={project.href} target="_blank" rel="noreferrer" key={project.name}>
+              <span className="project-type">{project.type}</span>
+              <div className="project-number" aria-hidden="true">0{selectedWork.indexOf(project) + 1}</div>
+              <div className="project-content">
+                <h3>{project.name} <Arrow /></h3>
+                <p>{project.description}</p>
+                <span className="project-stack">{project.stack}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="credentials section-pad">
+        <div>
+          <p className="eyebrow">FOUNDATION</p>
+          <h2>Built on curiosity.<br /><em>Proven in practice.</em></h2>
+        </div>
+        <div className="credential-list">
+          <div><span>EDUCATION</span><strong>B.Tech, Mathematics & Computer Science</strong><p>Federal University of Technology, Owerri · 2006—2011</p></div>
+          <div><span>CERTIFICATION</span><strong>Scrum Master Certified (SMC)</strong><p>Agile team leadership and delivery</p></div>
+          <div><span>LANGUAGES</span><strong>English & French</strong><p>Professional English · Elementary French</p></div>
+        </div>
+      </section>
+
+      <section className="contact section-pad" id="contact">
+        <p className="eyebrow">HAVE A PROJECT IN MIND?</p>
+        <h2>Let’s build something<br /><em>exceptional.</em></h2>
+        <p>Whether you’re scaling a SaaS product, modernizing a platform or strengthening delivery infrastructure, I’d love to hear what you’re working on.</p>
+        <a className="contact-email" href={`mailto:${profile.email}`}>{profile.email} <Arrow /></a>
+        <div className="contact-links">
+          <a href="https://www.linkedin.com/in/uchenna-ihe" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a>
+          <a href="https://github.com/urchihe" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
+          <a href={`tel:${profile.phone}`}>{profile.phone}</a>
+        </div>
+      </section>
+
+      <VisitorAnalytics />
+    </>
+  );
+}

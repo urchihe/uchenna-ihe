@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container, Box, Typography, Card, CardContent, List, ListItem, Divider, Grid, Link } from '@mui/material';
+import { Container, Box, Typography, Card, CardContent, Grid } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School'
 import DescriptionIcon from '@mui/icons-material/Description';
-import WorkIcon from '@mui/icons-material/Work';
 import ProjectCarousel from './ProjectCarousel';
+import WorkExperience from "./WorkExperience";
 
 
 const Resume = () => {
@@ -12,33 +12,46 @@ const Resume = () => {
             <Grid container spacing={4}>
                 {/* About Me Section */}
                 <Grid item xs={12}>
-                    <Container maxWidth="lg">
-                            <Typography
-                                variant="h5" sx={{ marginBottom: 2, display: 'flex', alignItems: 'center' }}
-                            >
-                               <DescriptionIcon sx={{ marginRight: 1 }} /> Professional Summary
-                            </Typography>
-                            Experienced Full-Stack Developer with a strong background in SaaS, Multi-Tenancy, and DevOps, specializing in highly scalable applications such as crowdfunding platforms, EdTech solutions, and enterprise systems.<br /><br />
+                    <Container maxWidth="lg" id="about-me">
+                        <Typography
+                            variant="h5"
+                            sx={{ marginBottom: 2, display: 'flex', alignItems: 'center' }}
+                        >
+                            <DescriptionIcon sx={{ marginRight: 1 }} /> Professional Summary
+                        </Typography>
 
-                            🔹 <strong>Recent Achievements:</strong><br />
-                            Revived and transformed <strong>DoviLearn</strong> into <strong>BulletLMS</strong>, a SaaS platform, by:<br />
-                            ✅ Migrating to a faster, optimized server<br />
-                            ✅ Implementing CI/CD for smooth deployments<br />
-                            ✅ Dockerizing for improved scalability<br />
-                            ✅ Automating business processes using <strong>SendPulse</strong><br />
-                            ✅ Adding new learning formats (Excel, DOCX, SCORM, xAPI)<br /><br />
+                        Experienced Full-Stack & DevOps Engineer with strong expertise in SaaS, Multi-Tenancy, and DevOps. Skilled in building scalable platforms, automating workflows, and optimizing system performance.<br /><br />
 
-                            🔹 <strong>Previous Experience:</strong><br />
-                            At <strong>The Coding Machine</strong>, worked on SaaS applications, crowdfunding platforms, and <strong>React Native</strong> mobile apps, gaining expertise in <strong>Laravel Nova</strong>, <strong>React</strong>, <strong>Symfony</strong>, <strong>REST API development</strong>, <strong>MySQL</strong>, <strong>Node.js</strong>, and <strong>TypeScript</strong>.<br /><br />
+                        🔹 <strong>Current Role (Mar 2025 - Present): Paxform | Contract | Australia · Remote</strong><br />
+                        As Technical Lead & DevOps Architect, transformed Paxform’s multi-repo architecture into a fully Dockerized monorepo running seven integrated services — React (frontend & backoffice), Laravel API, Node.js (Socket.IO), Redis, MySQL, phpMyAdmin, Mailpit — orchestrated via Traefik and Nginx for production-grade routing and SSL management.<br /><br />
+                        <strong>Key Achievements:</strong><br />
+                        ✅ Dockerized the full application stack with Traefik reverse proxy, automated routing, and Nginx configuration<br />
+                        ✅ Unified three repositories (frontend, backoffice, API) into a monorepo for seamless CI/CD and dependency management<br />
+                        ✅ Built green-blue deployment pipelines with GitLab CI/CD for zero-downtime releases and rollbacks<br />
+                        ✅ Developed a conditional form builder with GrapesJS, grouped sections, dynamic logic, and feature-based toggles<br />
+                        ✅ Delivered multi-tenant architecture supporting custom domains, isolated databases/storage, and automated SSL provisioning<br />
+                        ✅ Created Makefile automation scripts for one-command service setup and environment management<br />
+                        ✅ Implemented feature flagging and annotation-based configuration for modular tenant control<br />
+                        ✅ Led a cross-functional team, improving delivery velocity, system stability, and DevOps discipline<br /><br />
 
-                            🔹 <strong>Tech Stack:</strong><br />
-                            💻 <strong>Laravel</strong>, <strong>Nova</strong>, <strong>Symfony</strong>, <strong>React</strong>, <strong>Vue.js</strong> (2 & 3), <strong>Node.js</strong>, <strong>TypeScript</strong><br />
-                            📦 <strong>Docker</strong>, <strong>CI/CD</strong>, <strong>MariaDB</strong>, <strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>Redis</strong><br />
-                            🔗 <strong>Multi-Tenancy</strong>, <strong>Geolocation</strong>, <strong>Electronic Signatures</strong>, <strong>Data Encryption</strong><br /><br />
+                        🔹 <strong>Previous Achievements:</strong><br />
+                        Revived and transformed <strong>DoviLearn</strong> into <strong>BulletLMS</strong>, a SaaS platform, by:<br />
+                        ✅ Migrating to faster, optimized servers<br />
+                        ✅ Implementing CI/CD and Dockerization<br />
+                        ✅ Automating business processes with <strong>SendPulse</strong><br />
+                        ✅ Adding new learning formats (Excel, DOCX, SCORM, xAPI)<br />
+                        ✅ Integrating advanced reporting dashboards and analytics<br />
+                        ✅ Managing per-tenant SSL and custom domain setup<br /><br />
 
-                            🔹 Passionate about building scalable applications, automating workflows, and optimizing system performance. Always eager to take on new opportunities and challenges!
+                        🔹 <strong>Tech Stack & Tools:</strong><br />
+                        💻 <strong>Laravel</strong>, <strong>Nova</strong>, <strong>Symfony</strong>, <strong>React</strong>, <strong>Vue.js</strong> (2 & 3), <strong>Node.js</strong>, <strong>TypeScript</strong>, <strong>GrapesJS</strong><br />
+                        📦 <strong>Docker</strong>, <strong>CI/CD</strong>, <strong>MariaDB</strong>, <strong>MySQL</strong>, <strong>PostgreSQL</strong>, <strong>Redis</strong>, <strong>Traefik</strong>, <strong>Nginx</strong><br />
+                        🔗 <strong>Multi-Tenancy</strong>, <strong>Geolocation</strong>, <strong>Electronic Signatures</strong>, <strong>Data Encryption</strong>, <strong>Tenant Isolation</strong>, <strong>Feature Flags</strong><br /><br />
+
+                        🔹 Passionate about delivering high-quality, scalable applications, driving DevOps excellence, and mentoring teams to accelerate product delivery.
                     </Container>
                 </Grid>
+
 
                 {/* Education Section */}
                 <Grid item xs={12} md={12}>
@@ -64,108 +77,7 @@ const Resume = () => {
                 </Grid>
 
                 {/* Work Experience Section */}
-                <Grid item xs={12} md={12}>
-                    <Container maxWidth="lg">
-                        <Typography variant="h5" sx={{ marginBottom: 2, display: 'flex', alignItems: 'center' }}>
-                            <WorkIcon sx={{ marginRight: 1 }} /> Work Experience
-                        </Typography>
-                        <List>
-                            <ListItem>
-                                <Link
-                                    href="https://www.dovilearn.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    underline="hover"
-                                    >
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                        Senior Full Stack Developer | DoviLearn
-                                    </Typography>
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Typography variant="body2" component="div">
-                                    <ul>
-                                        <li>Revived and transformed DoviLearn.com into a SaaS platform (BulletLMS.com).</li>
-                                        <li>Migrated to a high-performance server, optimizing speed and reliability.</li>
-                                        <li>Implemented CI/CD pipelines for automated deployment.</li>
-                                        <li>Dockerized the platform for better scalability.</li>
-                                        <li>Integrated multiple learning formats (Excel, DOCX, SCORM, xAPI).</li>
-                                        <li>Developed business automation workflows using SendPulse.</li>
-                                    </ul>
-                                </Typography>
-                            </ListItem>
-                            <Divider sx={{ marginTop: 1 }} />
-                            <ListItem>
-                               <Link
-                                    href="https://www.thecodingmachine.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    underline="hover"
-                                    >
-                                    <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                        Full Stack Engineer | The Coding Machine
-                                    </Typography>
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Typography variant="body2" component="div">
-                                    <ul>
-                                        <li>Developed SaaS applications, crowdfunding platforms, and mobile apps.</li>
-                                        <li>Worked with Laravel, React, Vue.js, Symfony, and REST API development.</li>
-                                        <li>Designed and implemented scalable front-end and back-end solutions.</li>
-                                        <li>Managed MySQL databases and optimized performance.</li>
-                                    </ul>
-                                </Typography>
-                            </ListItem>
-                            <Divider sx={{ marginTop: 1 }} />
-                            <ListItem>
-                                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                    Senior Web Application Developer | Freelance
-                                </Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography variant="body2" component="div">
-                                    <ul>
-                                        <li>Designed and maintained web and mobile applications.</li>
-                                        <li>Built scalable solutions with modern technologies.</li>
-                                        <li>Provided full-stack development services to various clients.</li>
-                                    </ul>
-                                </Typography>
-                            </ListItem>
-                            <Divider sx={{ marginTop: 1 }} />
-                            <ListItem>
-                                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                    Project Support Officer | Adaptive Technology and Engineering Services
-                                </Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography variant="body2" component="div">
-                                    <ul>
-                                        <li>Planned and designed electrical switchgear panels and motor control centers.</li>
-                                        <li>Supervised installation of electrical components.</li>
-                                        <li>Prepared project documentation and cost quotations.</li>
-                                        <li>Conducted training sessions and workshops.</li>
-                                    </ul>
-                                </Typography>
-                            </ListItem>
-                            <Divider sx={{ marginTop: 1 }} />
-                            <ListItem>
-                                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
-                                    Network Engineer | Premium Communication
-                                </Typography>
-                            </ListItem>
-                            <ListItem>
-                                <Typography variant="body2" component="div">
-                                    <ul>
-                                        <li>Installed and configured Cisco routers.</li>
-                                        <li>Managed Microsoft server environments (Windows Server 2008-2012).</li>
-                                        <li>Performed hardware repair and maintenance.</li>
-                                    </ul>
-                                </Typography>
-                            </ListItem>
-                        </List>
-                    </Container>
-                </Grid>
+                 <WorkExperience />
                 <ProjectCarousel />
             </Grid>
         </Box>

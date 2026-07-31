@@ -20,9 +20,10 @@ const projects = [
 const sliderSettings = {
   dots: true,
   infinite: true,
-  speed: 500,
-  slidesToShow: 2, // Adjust for mobile
+  speed: 100,
+  slidesToShow: 2,
   slidesToScroll: 1,
+  autoplay: true,
   responsive: [
     {
       breakpoint: 960,
