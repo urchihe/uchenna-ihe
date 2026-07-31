@@ -230,6 +230,18 @@ export default function Home({ profile }) {
   return (
     <>
       <section className="hero section-pad" id="top">
+        <div className="hero-code-bg" aria-hidden="true">
+          <span>{'</>'}</span>
+          <span>{'{ api: true }'}</span>
+          <span>docker.compose()</span>
+          <span>{'deploy => production'}</span>
+          <span>websocket.connect()</span>
+          <span>SELECT * FROM ideas</span>
+          <span>git push origin main</span>
+          <span>{'const scale = 9+'}</span>
+          <span>IoT.stream(data)</span>
+          <span>CI/CD ✓</span>
+        </div>
         <div className="hero-copy">
           <div className="availability"><i /> Available for select projects</div>
           <p className="eyebrow">SENIOR FULL STACK & DEVOPS ENGINEER</p>
