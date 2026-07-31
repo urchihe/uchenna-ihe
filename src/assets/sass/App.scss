@@ -55,9 +55,9 @@ h1 em { color: var(--accent); }
 .hero-meta strong { font-size: 12px; font-weight: 500; }
 
 .hero-visual { height: min(610px, 65vw); max-height: 610px; min-height: 480px; min-width: 0; position: relative; }
-.portrait-frame { height: 100%; overflow: hidden; position: relative; background: #d7b59b; }
-.portrait-frame::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,.12); background: linear-gradient(180deg, transparent 65%, rgba(11,20,32,.24)); }
-.portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 65% 38%; filter: saturate(.75) contrast(1.04); transform: scale(1.1); }
+.portrait-frame { height: 100%; overflow: hidden; position: relative; background: #c9e4f5; }
+.portrait-frame::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 0 1px rgba(255,255,255,.18); background: linear-gradient(180deg, transparent 76%, rgba(11,20,32,.1)); }
+.portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; filter: brightness(1.05) saturate(1.05); transform: scale(1.04); }
 .experience-stamp { position: absolute; left: -56px; top: 44px; width: 124px; height: 124px; border-radius: 50%; background: var(--accent-soft); color: var(--ink); display: grid; place-content: center; text-align: center; transform: rotate(-7deg); }
 .experience-stamp strong { font-size: 35px; line-height: 1; }
 .experience-stamp span { font: 500 10px/1.4 'DM Mono', monospace; letter-spacing: .08em; margin-top: 5px; }

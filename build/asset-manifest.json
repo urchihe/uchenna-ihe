@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/uchenna-ihe/static/css/main.2437070d.css",
-    "main.js": "/uchenna-ihe/static/js/main.1569ac4a.js",
-    "static/media/pic.png": "/uchenna-ihe/static/media/pic.c320402d0ac7f8e22e1d.png",
+    "main.css": "/uchenna-ihe/static/css/main.2ec8ef21.css",
+    "main.js": "/uchenna-ihe/static/js/main.aaf1c0e8.js",
+    "static/media/profile-beach-bright.webp": "/uchenna-ihe/static/media/profile-beach-bright.00b16e4734ab26b120a7.webp",
     "index.html": "/uchenna-ihe/index.html",
-    "main.2437070d.css.map": "/uchenna-ihe/static/css/main.2437070d.css.map",
-    "main.1569ac4a.js.map": "/uchenna-ihe/static/js/main.1569ac4a.js.map"
+    "main.2ec8ef21.css.map": "/uchenna-ihe/static/css/main.2ec8ef21.css.map",
+    "main.aaf1c0e8.js.map": "/uchenna-ihe/static/js/main.aaf1c0e8.js.map"
   },
   "entrypoints": [
-    "static/css/main.2437070d.css",
-    "static/js/main.1569ac4a.js"
+    "static/css/main.2ec8ef21.css",
+    "static/js/main.aaf1c0e8.js"
   ]
 }

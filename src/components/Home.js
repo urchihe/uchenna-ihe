@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePic from '../assets/images/pic.png';
+import profilePic from '../assets/images/profile-beach-bright.webp';
 import VisitorAnalytics from './VisitorAnalytics';
 
 const capabilities = [
@@ -131,7 +131,7 @@ export default function Home({ profile }) {
 
         <div className="hero-visual" aria-label="Portrait of Uchenna Ihe">
           <div className="portrait-frame">
-            <img src={profilePic} alt="Uchenna Ihe at his workspace" />
+            <img src={profilePic} alt="Uchenna Ihe smiling on the beach" />
           </div>
           <div className="experience-stamp">
             <strong>9+</strong>
