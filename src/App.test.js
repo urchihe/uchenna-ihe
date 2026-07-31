@@ -14,6 +14,7 @@ test('renders Uchenna’s portfolio introduction', () => {
     'I build digital products that scale.'
   );
   expect(container).toHaveTextContent('9+ years of experience');
+  expect(container).toHaveTextContent('SaaS & IoT architecture');
 
   const collaborationLink = Array.from(container.querySelectorAll('a')).find(
     (link) => link.textContent.includes('Let’s work together')
@@ -22,6 +23,9 @@ test('renders Uchenna’s portfolio introduction', () => {
 
   const whatsappLink = container.querySelector('[aria-label="Chat with Uchenna on WhatsApp"]');
   expect(whatsappLink).toHaveAttribute('href', expect.stringContaining('https://wa.me/2348130148615'));
+
+  const emailLink = container.querySelector('[aria-label="Email urchihe@gmail.com using Gmail"]');
+  expect(emailLink).toHaveAttribute('href', expect.stringContaining('https://mail.google.com/mail/'));
 
   const analyticsToggle = Array.from(container.querySelectorAll('button')).find(
     (button) => button.textContent.includes('Visitors around the world')

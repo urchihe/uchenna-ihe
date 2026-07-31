@@ -17,9 +17,9 @@ const capabilities = [
   },
   {
     number: '03',
-    title: 'SaaS architecture',
-    text: 'Secure multi-tenant systems with isolated data, custom domains, billing controls and feature-based access.',
-    tags: ['Multi-tenancy', 'Redis', 'PostgreSQL'],
+    title: 'SaaS & IoT architecture',
+    text: 'Secure multi-tenant and connected-device systems with isolated data, real-time communication, custom infrastructure and feature-based access.',
+    tags: ['IoT', 'Multi-tenancy', 'WebSockets', 'PostgreSQL'],
   },
 ];
 
@@ -29,7 +29,7 @@ const roles = [
     role: 'Senior Full Stack & DevOps Engineer',
     company: 'Independent / Freelance',
     location: 'Remote',
-    text: 'Delivering and operating production products for clients, including OnPadel—a real-time web and mobile padel platform—and the Dockerized ARD Fleet Operations platform deployed on Oracle Cloud.',
+    text: 'Delivering and operating production products for clients, including OnPadel—a real-time web and mobile padel platform—and the Dockerized, IoT-enabled ARD Fleet Operations platform deployed on Oracle Cloud.',
     stat: '2026',
     statLabel: 'latest production delivery work',
   },
@@ -72,10 +72,10 @@ const selectedWork = [
     className: 'project-onpadel',
   },
   {
-    type: 'RECENT FREELANCE · FLEET OPERATIONS',
+    type: 'RECENT FREELANCE · IOT & FLEET OPERATIONS',
     name: 'ARD Fleet Operations',
-    description: 'A Dockerized fleet operations ecosystem connecting a Next.js interface to NestJS services and PostgreSQL, routed through Traefik and deployed on Oracle Cloud.',
-    stack: 'Next.js · NestJS · Docker · Traefik · PostgreSQL · Oracle Cloud',
+    description: 'A Dockerized IoT fleet-operations ecosystem connecting managed devices to a Next.js interface, NestJS services and PostgreSQL, routed through Traefik on Oracle Cloud.',
+    stack: 'IoT · Next.js · NestJS · Docker · Traefik · PostgreSQL · Oracle Cloud',
     links: [
       { label: 'Operations portal', href: 'http://94.250.203.125/login' },
       { label: 'Device console', href: 'http://94.250.203.125:8082/login/' },
@@ -147,7 +147,7 @@ export default function Home({ profile }) {
       </section>
 
       <section className="marquee" aria-label="Core expertise">
-        <div>SAAS ARCHITECTURE <span>✦</span> FULL STACK ENGINEERING <span>✦</span> DEVOPS AUTOMATION <span>✦</span> MULTI-TENANT SYSTEMS</div>
+        <div>SAAS ARCHITECTURE <span>✦</span> IOT SYSTEMS <span>✦</span> FULL STACK ENGINEERING <span>✦</span> DEVOPS AUTOMATION <span>✦</span> MULTI-TENANT SYSTEMS</div>
       </section>
 
       <section className="about section-pad" id="about">
@@ -200,6 +200,7 @@ export default function Home({ profile }) {
             <h2>Products built<br />to <em>perform.</em></h2>
           </div>
           <a className="text-link" href="https://github.com/urchihe" target="_blank" rel="noreferrer">View GitHub <Arrow /></a>
+          <span className="swipe-hint" aria-hidden="true">Swipe projects →</span>
         </div>
         <div className="project-grid">
           {selectedWork.map((project) => (
@@ -229,7 +230,7 @@ export default function Home({ profile }) {
           <h2>Built on curiosity.<br /><em>Proven in practice.</em></h2>
         </div>
         <div className="credential-list">
-          <div><span>EDUCATION</span><strong>B.Tech, Mathematics & Computer Science</strong><p>Federal University of Technology, Owerri · 2006—2011</p></div>
+          <div><span>EDUCATION</span><strong>B.Tech, Mathematics & Computer Science</strong><p>Federal University of Technology, Owerri</p></div>
           <div><span>CERTIFICATION</span><strong>Scrum Master Certified (SMC)</strong><p>Agile team leadership and delivery</p></div>
           <div><span>LANGUAGES</span><strong>English & French</strong><p>Professional English · Elementary French</p></div>
         </div>
@@ -239,7 +240,15 @@ export default function Home({ profile }) {
         <p className="eyebrow">HAVE A PROJECT IN MIND?</p>
         <h2>Let’s build something<br /><em>exceptional.</em></h2>
         <p>Whether you’re scaling a SaaS product, modernizing a platform or strengthening delivery infrastructure, I’d love to hear what you’re working on.</p>
-        <a className="contact-email" href={`mailto:${profile.email}`}>{profile.email} <Arrow /></a>
+        <a
+          className="contact-email"
+          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(profile.email)}&su=${encodeURIComponent('Project enquiry from your portfolio')}`}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`Email ${profile.email} using Gmail`}
+        >
+          {profile.email} <Arrow />
+        </a>
         <div className="contact-links">
           <a href="https://www.linkedin.com/in/uchenna-ihe" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a>
           <a href="https://github.com/urchihe" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
