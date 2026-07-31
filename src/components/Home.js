@@ -29,7 +29,7 @@ const roles = [
     role: 'Senior Full Stack & DevOps Engineer',
     company: 'Independent / Freelance',
     location: 'Remote',
-    text: 'Delivering and operating Dockerized products for clients, including the OnPadel platform and ARD Fleet Operations—a multi-service system spanning a web portal, fleet device console and documented API.',
+    text: 'Delivering and operating production products for clients, including OnPadel—a real-time web and mobile padel platform—and the Dockerized ARD Fleet Operations platform deployed on Oracle Cloud.',
     stat: '2026',
     statLabel: 'latest production delivery work',
   },
@@ -66,16 +66,16 @@ const selectedWork = [
   {
     type: 'RECENT FREELANCE · PADEL PLATFORM',
     name: 'OnPadel',
-    description: 'A Dockerized Next.js padel operations platform with secure user and admin journeys, protected dashboards and production delivery through Nginx.',
-    stack: 'Next.js · Docker · Nginx',
+    description: 'A full-stack padel platform with real-time WebSocket experiences, secure user and admin journeys, a dedicated mobile-app API and production infrastructure on AWS.',
+    stack: 'Laravel · Next.js · MySQL · WebSockets · Mobile API · AWS',
     links: [{ label: 'Visit OnPadel', href: 'https://onpadel.net/' }],
     className: 'project-onpadel',
   },
   {
     type: 'RECENT FREELANCE · FLEET OPERATIONS',
     name: 'ARD Fleet Operations',
-    description: 'A Dockerized fleet operations ecosystem connecting a secure admin portal, device management console and documented Express API across production services.',
-    stack: 'Next.js · Express · Docker · Jetty',
+    description: 'A Dockerized fleet operations ecosystem connecting a Next.js interface to NestJS services and PostgreSQL, routed through Traefik and deployed on Oracle Cloud.',
+    stack: 'Next.js · NestJS · Docker · Traefik · PostgreSQL · Oracle Cloud',
     links: [
       { label: 'Operations portal', href: 'http://94.250.203.125/login' },
       { label: 'Device console', href: 'http://94.250.203.125:8082/login/' },
@@ -86,8 +86,8 @@ const selectedWork = [
   {
     type: 'MULTI-TENANT SAAS',
     name: 'Paxform',
-    description: 'An adaptive forms and workflow platform with dynamic logic, tenant isolation, custom infrastructure and subscription-based feature control.',
-    stack: 'React · Laravel · Docker · AWS',
+    description: 'An adaptive forms and workflow platform built with Laravel and React, containerized with Docker and released through green-blue deployments for safe, low-risk updates.',
+    stack: 'Laravel · React · Docker · MySQL · Green-blue deployment',
     links: [{ label: 'Visit Paxform', href: 'https://www.paxform.com' }],
     className: 'project-paxform',
   },
@@ -102,6 +102,11 @@ const selectedWork = [
 ];
 
 const Arrow = () => <span aria-hidden="true">↗</span>;
+const WhatsAppIcon = () => (
+  <svg className="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true">
+    <path fill="currentColor" d="M16.04 3C8.86 3 3.02 8.75 3.02 15.82c0 2.26.6 4.47 1.74 6.4L3 28.58l6.56-1.7a13.1 13.1 0 0 0 6.47 1.66h.01c7.18 0 13.02-5.75 13.02-12.82C29.06 8.75 23.22 3 16.04 3Zm0 23.38h-.01a10.9 10.9 0 0 1-5.55-1.5l-.4-.23-3.89 1.01 1.04-3.74-.26-.4a10.6 10.6 0 0 1-1.7-5.7c0-5.88 4.83-10.66 10.77-10.66 5.94 0 10.77 4.78 10.77 10.66 0 5.88-4.83 10.66-10.77 10.66Zm5.9-7.98c-.32-.16-1.91-.93-2.2-1.03-.3-.11-.51-.16-.73.16-.21.32-.83 1.03-1.02 1.24-.19.22-.38.24-.7.08-.33-.16-1.37-.5-2.61-1.58a9.8 9.8 0 0 1-1.81-2.22c-.19-.32-.02-.5.14-.66.15-.14.33-.37.49-.56.16-.18.21-.32.32-.53.11-.22.06-.4-.02-.56-.08-.16-.73-1.73-1-2.37-.26-.63-.53-.55-.73-.56h-.62c-.21 0-.56.08-.86.4-.3.32-1.13 1.1-1.13 2.67 0 1.57 1.16 3.09 1.32 3.3.16.21 2.28 3.43 5.52 4.81.77.33 1.37.52 1.84.67.77.24 1.48.21 2.03.13.62-.09 1.91-.77 2.18-1.51.27-.75.27-1.39.19-1.52-.08-.14-.3-.22-.62-.38Z" />
+  </svg>
+);
 
 export default function Home({ profile }) {
   return (
@@ -116,7 +121,7 @@ export default function Home({ profile }) {
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#work">Explore my work <Arrow /></a>
-            <a className="text-link" href={`mailto:${profile.email}`}>Let’s work together <Arrow /></a>
+            <a className="text-link" href="#contact">Let’s work together <Arrow /></a>
           </div>
           <div className="hero-meta">
             <div><span>BASED IN</span><strong>{profile.location}</strong></div>
@@ -238,7 +243,15 @@ export default function Home({ profile }) {
         <div className="contact-links">
           <a href="https://www.linkedin.com/in/uchenna-ihe" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a>
           <a href="https://github.com/urchihe" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
-          <a href={`tel:${profile.phone}`}>{profile.phone}</a>
+          <a
+            className="whatsapp-link"
+            href={`https://wa.me/${profile.phone.replace(/\D/g, '')}?text=${encodeURIComponent('Hello Uchenna, I found your portfolio and would like to discuss a project.')}`}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Chat with Uchenna on WhatsApp"
+          >
+            <WhatsAppIcon /> WhatsApp
+          </a>
         </div>
       </section>
 

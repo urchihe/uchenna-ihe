@@ -15,6 +15,14 @@ test('renders Uchenna’s portfolio introduction', () => {
   );
   expect(container).toHaveTextContent('9+ years of experience');
 
+  const collaborationLink = Array.from(container.querySelectorAll('a')).find(
+    (link) => link.textContent.includes('Let’s work together')
+  );
+  expect(collaborationLink).toHaveAttribute('href', '#contact');
+
+  const whatsappLink = container.querySelector('[aria-label="Chat with Uchenna on WhatsApp"]');
+  expect(whatsappLink).toHaveAttribute('href', expect.stringContaining('https://wa.me/2348130148615'));
+
   const analyticsToggle = Array.from(container.querySelectorAll('button')).find(
     (button) => button.textContent.includes('Visitors around the world')
   );
