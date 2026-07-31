@@ -25,6 +25,15 @@ const capabilities = [
 
 const roles = [
   {
+    dates: '2026 — PRESENT',
+    role: 'Senior Full Stack & DevOps Engineer',
+    company: 'Independent / Freelance',
+    location: 'Remote',
+    text: 'Delivering and operating Dockerized products for clients, including the OnPadel platform and ARD Fleet Operations—a multi-service system spanning a web portal, fleet device console and documented API.',
+    stat: '2026',
+    statLabel: 'latest production delivery work',
+  },
+  {
     dates: 'MAR 2025 — PRESENT',
     role: 'Full Stack & DevOps Engineer',
     company: 'Paxform',
@@ -55,11 +64,31 @@ const roles = [
 
 const selectedWork = [
   {
+    type: 'RECENT FREELANCE · PADEL PLATFORM',
+    name: 'OnPadel',
+    description: 'A Dockerized Next.js padel operations platform with secure user and admin journeys, protected dashboards and production delivery through Nginx.',
+    stack: 'Next.js · Docker · Nginx',
+    links: [{ label: 'Visit OnPadel', href: 'https://onpadel.net/' }],
+    className: 'project-onpadel',
+  },
+  {
+    type: 'RECENT FREELANCE · FLEET OPERATIONS',
+    name: 'ARD Fleet Operations',
+    description: 'A Dockerized fleet operations ecosystem connecting a secure admin portal, device management console and documented Express API across production services.',
+    stack: 'Next.js · Express · Docker · Jetty',
+    links: [
+      { label: 'Operations portal', href: 'http://94.250.203.125/login' },
+      { label: 'Device console', href: 'http://94.250.203.125:8082/login/' },
+      { label: 'API documentation', href: 'http://94.250.203.125:3010/api' },
+    ],
+    className: 'project-ard',
+  },
+  {
     type: 'MULTI-TENANT SAAS',
     name: 'Paxform',
     description: 'An adaptive forms and workflow platform with dynamic logic, tenant isolation, custom infrastructure and subscription-based feature control.',
     stack: 'React · Laravel · Docker · AWS',
-    href: 'https://www.paxform.com',
+    links: [{ label: 'Visit Paxform', href: 'https://www.paxform.com' }],
     className: 'project-paxform',
   },
   {
@@ -67,16 +96,8 @@ const selectedWork = [
     name: 'BulletLMS',
     description: 'A resilient SaaS learning platform supporting rich learning formats, global payments, automated deployments and business workflows.',
     stack: 'Laravel · Vue.js · DigitalOcean',
-    href: 'https://www.bulletlms.com',
+    links: [{ label: 'Visit BulletLMS', href: 'https://www.bulletlms.com' }],
     className: 'project-bullet',
-  },
-  {
-    type: 'PRODUCT PORTFOLIO',
-    name: 'More shipped products',
-    description: 'SaaS applications, crowdfunding platforms, eCommerce products and mobile experiences delivered for teams across Europe, Africa and Australia.',
-    stack: 'Web · Mobile · Cloud',
-    href: 'https://github.com/urchihe',
-    className: 'project-more',
   },
 ];
 
@@ -91,7 +112,7 @@ export default function Home({ profile }) {
           <p className="eyebrow">SENIOR FULL STACK & DEVOPS ENGINEER</p>
           <h1>I build digital products that <em>scale.</em></h1>
           <p className="hero-intro">
-            I’m Uchenna, a product-minded engineer with 7+ years of experience turning ambitious ideas and legacy systems into reliable SaaS platforms.
+            I’m Uchenna, a product-minded engineer with 9+ years of experience turning ambitious ideas and legacy systems into reliable SaaS platforms.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#work">Explore my work <Arrow /></a>
@@ -108,7 +129,7 @@ export default function Home({ profile }) {
             <img src={profilePic} alt="Uchenna Ihe at his workspace" />
           </div>
           <div className="experience-stamp">
-            <strong>7+</strong>
+            <strong>9+</strong>
             <span>YEARS OF<br />EXPERIENCE</span>
           </div>
           <div className="code-card" aria-hidden="true">
@@ -177,15 +198,22 @@ export default function Home({ profile }) {
         </div>
         <div className="project-grid">
           {selectedWork.map((project) => (
-            <a className={`project-card ${project.className}`} href={project.href} target="_blank" rel="noreferrer" key={project.name}>
+            <article className={`project-card ${project.className}`} key={project.name}>
               <span className="project-type">{project.type}</span>
               <div className="project-number" aria-hidden="true">0{selectedWork.indexOf(project) + 1}</div>
               <div className="project-content">
-                <h3>{project.name} <Arrow /></h3>
+                <h3>{project.name}</h3>
                 <p>{project.description}</p>
                 <span className="project-stack">{project.stack}</span>
+                <div className="project-links">
+                  {project.links.map((link) => (
+                    <a href={link.href} target="_blank" rel="noreferrer" key={link.href}>
+                      {link.label} <Arrow />
+                    </a>
+                  ))}
+                </div>
               </div>
-            </a>
+            </article>
           ))}
         </div>
       </section>

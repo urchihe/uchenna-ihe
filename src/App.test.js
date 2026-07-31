@@ -13,6 +13,15 @@ test('renders Uchenna’s portfolio introduction', () => {
   expect(container.querySelector('h1')).toHaveTextContent(
     'I build digital products that scale.'
   );
+  expect(container).toHaveTextContent('9+ years of experience');
+
+  const analyticsToggle = Array.from(container.querySelectorAll('button')).find(
+    (button) => button.textContent.includes('Visitors around the world')
+  );
+  expect(analyticsToggle).toHaveAttribute('aria-expanded', 'false');
+
+  act(() => analyticsToggle.click());
+  expect(analyticsToggle).toHaveAttribute('aria-expanded', 'true');
 
   act(() => root.unmount());
   container.remove();
