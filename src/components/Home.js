@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import profilePic from '../assets/images/profile-beach-bright.webp';
 import VisitorAnalytics from './VisitorAnalytics';
 
@@ -108,7 +108,53 @@ const WhatsAppIcon = () => (
   </svg>
 );
 
+function useAutoSlider(delay = 4200) {
+  const sliderRef = useRef(null);
+  const pauseUntil = useRef(0);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+      return undefined;
+    }
+
+    const pauseAutoPlay = () => {
+      pauseUntil.current = Date.now() + 7000;
+    };
+
+    ['pointerdown', 'touchstart', 'wheel'].forEach((eventName) => {
+      slider.addEventListener(eventName, pauseAutoPlay, { passive: true });
+    });
+
+    const interval = window.setInterval(() => {
+      if (Date.now() < pauseUntil.current || slider.scrollWidth <= slider.clientWidth + 10) return;
+
+      const slides = Array.from(slider.children);
+      const nextSlide = slides.find((slide) => (
+        slide.offsetLeft - slider.offsetLeft > slider.scrollLeft + 24
+      )) || slides[0];
+
+      slider.scrollTo({
+        left: Math.max(0, nextSlide.offsetLeft - slider.offsetLeft),
+        behavior: 'smooth',
+      });
+    }, delay);
+
+    return () => {
+      window.clearInterval(interval);
+      ['pointerdown', 'touchstart', 'wheel'].forEach((eventName) => {
+        slider.removeEventListener(eventName, pauseAutoPlay);
+      });
+    };
+  }, [delay]);
+
+  return sliderRef;
+}
+
 export default function Home({ profile }) {
+  const capabilitiesSlider = useAutoSlider(4600);
+  const projectsSlider = useAutoSlider(5200);
+
   return (
     <>
       <section className="hero section-pad" id="top">
@@ -161,7 +207,7 @@ export default function Home({ profile }) {
         </div>
       </section>
 
-      <section className="capabilities section-pad">
+      <section className="capabilities section-pad" ref={capabilitiesSlider} aria-label="Engineering capabilities slider">
         {capabilities.map((item) => (
           <article className="capability" key={item.number}>
             <span className="cap-number">{item.number}</span>
@@ -200,9 +246,9 @@ export default function Home({ profile }) {
             <h2>Products built<br />to <em>perform.</em></h2>
           </div>
           <a className="text-link" href="https://github.com/urchihe" target="_blank" rel="noreferrer">View GitHub <Arrow /></a>
-          <span className="swipe-hint" aria-hidden="true">Swipe projects →</span>
+          <span className="swipe-hint" aria-hidden="true">Auto-play · swipe anytime →</span>
         </div>
-        <div className="project-grid">
+        <div className="project-grid" ref={projectsSlider} aria-label="Selected projects slider">
           {selectedWork.map((project) => (
             <article className={`project-card ${project.className}`} key={project.name}>
               <span className="project-type">{project.type}</span>
