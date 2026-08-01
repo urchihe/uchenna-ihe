@@ -7,7 +7,7 @@ const navItems = [
   { label: 'Contact', href: '#contact' },
 ];
 
-export default function Nav() {
+export default function Nav({ bookingUrl }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -34,6 +34,9 @@ export default function Nav() {
             {item.label}
           </a>
         ))}
+        <a className="nav-booking" href={bookingUrl} target="_blank" rel="noreferrer">
+          Book a call <span aria-hidden="true">↗</span>
+        </a>
         <a className="nav-resume" href={`${process.env.PUBLIC_URL}/Uchenna_Ihe_CV.pdf`} download>
           Download CV <span aria-hidden="true">↘</span>
         </a>

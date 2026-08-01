@@ -30,6 +30,8 @@ a { color: inherit; }
 .main-nav { display: flex; align-items: center; gap: clamp(22px, 3vw, 46px); font-size: 13px; font-weight: 600; }
 .main-nav a { text-decoration: none; transition: color .2s; }
 .main-nav a:hover { color: var(--accent-soft); }
+.nav-booking { background: var(--accent); color: white; padding: 12px 16px; }
+.main-nav .nav-booking:hover { background: var(--accent-hover); color: white; }
 .nav-resume { border: 1px solid rgba(255,255,255,.35); padding: 11px 16px; }
 .menu-button { display: none; }
 
@@ -159,6 +161,7 @@ h1 em { color: var(--accent); }
 .contact-email { font-size: clamp(20px, 3vw, 34px); font-weight: 700; text-decoration: none; border-bottom: 2px solid white; padding-bottom: 7px; }
 .contact-links { display: flex; gap: 35px; margin-top: auto; font: 500 11px 'IBM Plex Mono', monospace; }
 .contact-links a { text-decoration: none; }
+.booking-link { border-bottom: 1px solid rgba(255,255,255,.75); padding-bottom: 4px; }
 .whatsapp-link { display: inline-flex; align-items: center; gap: 7px; }
 .whatsapp-icon { width: 18px; height: 18px; color: white; }
 

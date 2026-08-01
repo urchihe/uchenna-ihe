@@ -28,6 +28,11 @@ test('renders Uchenna’s portfolio introduction', () => {
   const emailLink = container.querySelector('[aria-label="Email urchihe@gmail.com using Gmail"]');
   expect(emailLink).toHaveAttribute('href', expect.stringContaining('https://mail.google.com/mail/'));
 
+  const bookingLinks = Array.from(container.querySelectorAll('a')).filter(
+    (link) => link.href === 'https://cal.com/uchenna-ihe-zv8hyg/15min'
+  );
+  expect(bookingLinks).toHaveLength(3);
+
   const analyticsToggle = Array.from(container.querySelectorAll('button')).find(
     (button) => button.textContent.includes('Visitors around the world')
   );

@@ -252,6 +252,7 @@ export default function Home({ profile }) {
           <div className="hero-actions">
             <a className="button button-primary" href="#work">Explore my work <Arrow /></a>
             <a className="text-link" href="#contact">Let’s work together <Arrow /></a>
+            <a className="text-link" href={profile.bookingUrl} target="_blank" rel="noreferrer">Book 15 min <Arrow /></a>
           </div>
           <div className="hero-meta">
             <div><span>BASED IN</span><strong>{profile.location}</strong></div>
@@ -378,6 +379,7 @@ export default function Home({ profile }) {
           {profile.email} <Arrow />
         </a>
         <div className="contact-links">
+          <a className="booking-link" href={profile.bookingUrl} target="_blank" rel="noreferrer">Book a 15-min call <Arrow /></a>
           <a href="https://www.linkedin.com/in/uchenna-ihe" target="_blank" rel="noreferrer">LinkedIn <Arrow /></a>
           <a href="https://github.com/urchihe" target="_blank" rel="noreferrer">GitHub <Arrow /></a>
           <a

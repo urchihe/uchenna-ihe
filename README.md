@@ -54,5 +54,6 @@ npm run deploy
 - [LinkedIn](https://www.linkedin.com/in/uchenna-ihe)
 - [GitHub](https://github.com/urchihe)
 - [WhatsApp](https://wa.me/2348130148615)
+- [Book a 15-minute call](https://cal.com/uchenna-ihe-zv8hyg/15min)
 
 © Uchenna Ihe.

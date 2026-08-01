@@ -8,12 +8,13 @@ const profile = {
   email: 'urchihe@gmail.com',
   phone: '+2348130148615',
   location: 'Lagos, Nigeria',
+  bookingUrl: 'https://cal.com/uchenna-ihe-zv8hyg/15min',
 };
 
 function App() {
   return (
     <div className="app-shell">
-      <Nav />
+      <Nav bookingUrl={profile.bookingUrl} />
       <main>
         <Home profile={profile} />
       </main>
